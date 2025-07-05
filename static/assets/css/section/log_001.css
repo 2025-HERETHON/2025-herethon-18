@@ -1,0 +1,94 @@
+.layout-outer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header_layout-inner {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.header_layout-inner .logo {
+    margin-left: 80px;
+}
+
+.header_layout-inner .main_age {
+    font-size: 16px;
+    color: #595959;
+    margin-left: 30px;
+}
+
+.header_layout-inner .login_btn button {
+    background-color: #236DB9;
+    color: #fff;
+    width: 169px;
+    height: 54px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1199px;
+    cursor: pointer;
+}
+
+.layout-inner {
+    flex-direction: column;
+}
+
+.layout-inner h2 {
+    font-size: 42px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.login_main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 80px;
+}
+
+.login_main .login_id,
+.login_main .login_password {
+    width: 600px;
+    height: 70px;
+    margin: 0 auto;
+    border: 1px solid #D8D8D8;
+    border-radius: 8px;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.login_main button {
+    width: 600px;
+    height: 85px;
+    background-color: #236DB9;
+    color: #fff;
+    font-size: 32px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.login_main .options {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+.login_main .options label {
+    color: #9D9D9D;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.login_main .options .log_links {
+    display: flex;
+    color: #9D9D9D;
+    font-size: 20px;
+    margin-left: 172px;
+}
