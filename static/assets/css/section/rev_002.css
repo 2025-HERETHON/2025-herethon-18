@@ -74,13 +74,17 @@
 }
 
 #write-input {
-    color: #999;
+    color: black;
     font-family: Pretendard;
     font-size: 28px;
     font-weight: 500;
     width: 1032px;
     border: none;
     outline: none;
+}
+
+#write-input::placeholder{
+    color: #999;
 }
 
 .write-content{
@@ -110,7 +114,7 @@
     flex-shrink: 0;
     border-radius: 5px;
     border: 1px solid #D8D8D8;
-    color: #999;
+    color: black; /* 사용자 텍스트 입력 시 글자색 검정색으로 변경 */
     font-family: Pretendard;
     font-size: 24px;
     font-weight: 400;
@@ -155,4 +159,9 @@
     font-size: 32px;
     font-weight: 700;
     line-height: 110%; 
+}
+
+/* 사용자 텍스트 입력 전 메시지는 글자색 회색 */
+#write-content::placeholder{
+    color: #999 
 }
