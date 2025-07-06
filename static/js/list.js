@@ -1,28 +1,16 @@
-
-//카테고리 누르면 해당 페이지로 넘어가고 버튼 색상도 active로 교체
-// HTML 문서가 완전히 로드된 후 실행
 document.addEventListener("DOMContentLoaded", function () {
-  
-  // 현재 페이지 파일명 추출 (예: 'list_teen.html')
   const currentPage = window.location.pathname.split('/').pop();
-  console.log("현재 페이지:", currentPage); // 개발자 도구 콘솔 확인용 로그
 
-  // 카테고리 필터 내 모든 <a> 링크를 선택
-  document.querySelectorAll('.category_filter a').forEach(link => {
-    
-    // <a> 내부의 <button> 요소 선택
-    const button = link.querySelector('button');
-
-    // 현재 <a> 태그의 href 값 가져오기 (예: 'list_teen.html')
+  document.querySelectorAll('.category_btn').forEach(link => {
     const linkHref = link.getAttribute('href');
 
-    // 현재 페이지 경로가 링크 경로와 일치하면 active 클래스 추가
     if (linkHref && linkHref.endsWith(currentPage)) {
-      button.classList.add('active');
-      console.log("✅ active 적용됨:", linkHref); // 어떤 버튼에 active가 적용됐는지 확인용
+      link.classList.add('active');
     }
   });
 });
+
+
 
 // 좋아요, 북마크 +1 & 이미지 교체
 document.addEventListener("DOMContentLoaded", function () {
@@ -65,3 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//url 이동
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.board_item').forEach(item => {
+      item.addEventListener('click', function (e) {
+        // 좋아요/북마크 아이콘 클릭 시 이동 막기
+        if (e.target.closest('.icon_item')) return;
+
+        const targetUrl = item.dataset.url;
+        if (targetUrl) {
+          // 새 탭으로 열기
+          window.open(targetUrl, '_blank');
+        }
+      });
+    });
+  });
