@@ -20,3 +20,20 @@ document.querySelector('.mypage-btn')?.addEventListener('click', function(){
 });
 
 
+// 각 그래프 클릭하면 해당하는 연령대 페이지로 이동
+const agePages = {
+    infant: 'main_infant.html',
+    teen: 'main_teen.html',
+    youth: 'main_youth.html',
+    middle: 'main_middle.html',
+    elder: 'main_elder.html'
+};
+
+document.querySelectorAll('.graph-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const ageKey = item.dataset.age; 
+        if (agePages[ageKey]) {
+        window.location.href = agePages[ageKey];
+        }
+    });
+});

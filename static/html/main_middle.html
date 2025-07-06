@@ -1,1 +1,191 @@
-<h1>middle</h1>
+<!-- 로그인 후 '중장년' 메인 화면 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>main_002</title>
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../assets/css/section/main_002.css" />
+        <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="layout-outer">
+            <!-- 헤더 -->
+            <header class="header layout-inner">
+                <div class="header-inner">
+                    <!-- 왼쪽 로고 + 연령 -->
+                    <div class="left-header">
+                        <span class="logo"><strong>가제가제가제</strong></span>
+                        <span class="header-age-label">중장년</span>
+                    </div>
+
+                    <!-- 오른쪽 후기,멘토질문방,커뮤니티 버튼 -->
+                    <div class="right-header">
+                        <div class="btns">
+                            <button class="review-btn">후기</button>
+                            <button class="qna-btn">멘토 질문방</button>
+                            <button class="com-btn">커뮤니티</button>
+                            <button class="mypage-btn">
+                                <img src="../assets/img/dog.png">
+                                강아지가 멍멍
+                            </button>
+                        </div>        
+                </div>
+            </header>
+
+            <!-- 메인 -->
+            <main class="layout-inner">
+                <!-- 메인 첫번째 줄 (그래프) -->
+                <section class="main1_layout-inner graph-wrapper">
+                    <div class="graph-section">
+                        <div class="graph-item" data-age="infant">
+                            <div>
+                                <img src="../assets/img/Vector 1.png"
+                                onmouseover="this.src='../assets/img/Vector 1-hover.png'" 
+                                onmouseout="this.src='../assets/img/Vector 1.png'">
+                            </div>
+                            <div class="age-text">
+                                <span class="main-age-label">영유아</span>
+                                <span class="main-age-range">0~6세</span>
+                            </div>
+                        </div>
+                        <div class="graph-item" data-age="teen">
+                            <div>
+                                <img src="../assets/img/Vector 2.png"
+                                onmouseover="this.src='../assets/img/Vector 2-hover.png'" 
+                                onmouseout="this.src='../assets/img/Vector 2.png'">
+                            </div>
+                            <div class="age-text">
+                                <span class="main-age-label">청소년</span>
+                                <span class="main-age-range">6~18세</span>
+                            </div>
+                        </div>
+                        <div class="graph-item" data-age="youth">
+                            <div>
+                                <img src="../assets/img/Vector 3.png"
+                                onmouseover="this.src='../assets/img/Vector 3-hover.png'" 
+                                onmouseout="this.src='../assets/img/Vector 3.png'">
+                            </div>
+                            <div class="age-text">
+                                <span class="main-age-label">대학생·청년</span>
+                                <span class="main-age-range">19~34세</span>
+                            </div>
+                        </div>
+                        <div class="graph-item" data-age="middle">
+                            <div>
+                                <img src="../assets/img/Vector 4.png"
+                                onmouseover="this.src='../assets/img/Vector 4-hover.png'" 
+                                onmouseout="this.src='../assets/img/Vector 4.png'">
+                            </div>
+                            <div class="age-text">
+                                <span class="main-age-label">중장년</span>
+                                <span class="main-age-range">35~64세</span>
+                            </div>
+                        </div>
+                        <div class="graph-item" data-age="elder">
+                            <div>
+                                <img src="../assets/img/Vector 5.png"
+                                onmouseover="this.src='../assets/img/Vector 5-hover.png'" 
+                                onmouseout="this.src='../assets/img/Vector 5.png'">
+                            </div>
+                            <div class="age-text">
+                                <span class="main-age-label">노인</span>
+                                <span class="main-age-range">65세 이상</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="graph-y">
+                        <span>전</span>
+                        <span>연</span>
+                        <span>령</span>
+                    </div>
+                </section>
+                <!-- 집계 날짜 추가 -->
+                <div class="month">
+                    <span>(집계 2025.06)</span>
+                </div>
+                
+                <!-- 메인 두번째 줄 -->
+                <div class="main2">
+                    <!-- 복지 인기 순위 -->
+                    <div class="popular-box-wrapper">
+                        <div class="popular-title">
+                            <div><img src="../assets/img/fire.svg" alt="불꽃 아이콘"></div>
+                            <div><strong>중장년</strong>에게 관심이 많은 복지는?</div>
+                        </div>
+
+                        <ul class="popular-list">
+                            <li data-likes="999">
+                                <span class="pop-rank">01</span>
+                                <span class="pop-desc">육아휴직 급여 지원</span>
+                                <span class="pop-like-number"><img src="../assets/img/heart.png">999</span>
+                            </li>
+                            <li data-likes="123">
+                                <span class="pop-rank">02</span>
+                                <span class="pop-desc">아이돌봄서비스</span>
+                                <span class="pop-like-number"><img src="../assets/img/heart.png">123</span>
+                            </li>
+                            <li data-likes="99">
+                                <span class="pop-rank">03</span>
+                                <span class="pop-desc">고용급여 미적용자 출산급여 지원</span>
+                                <span class="pop-like-number"><img src="../assets/img/heart.png">99</span>
+                            </li>
+                            <li data-likes="12">
+                                <span class="pop-rank">04</span>
+                                <span class="pop-desc">여성새로일하기센터 운영</span>
+                                <span class="pop-like-number"><img src="../assets/img/heart.png">12</span>
+                            </li>
+                            <li data-likes="9">
+                                <span class="pop-rank">05</span>
+                                <span class="pop-desc">온라인 여성경력개발센터(꿈날개) 운영</span>
+                                <span class="pop-like-number"><img src="../assets/img/heart.png">9</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 생생한 후기 확인하기 -->
+                    <!-- 후기 전체 박스 -->
+                    <div class="rev-box-wrapper">     
+                        <div class="rev-top"> <!-- 상단 타이틀 -->
+                            <img src="../assets/img/fish.svg" alt="fish">
+                            <span>생생한 <strong>후기</strong> 확인하기</span>
+                        </div>
+                        <div class="rev-bottom"> <!-- 후기 내용들 -->
+                            <div class="rev">
+                                <div class="rev-title">육아휴직 급여 지원</div>
+                                <div class="rev-con">신청 방법이 어려운 줄 알았는데 온라인으로 간편하게 신청 가능해서 너무 좋았어요. 주의할 점은 육아휴직...</div>
+                            </div>
+                            <div class="rev"> 
+                                <div class="rev-title">여성새로일하기센터 운영</div>
+                                <div class="rev-con">경력 단절 후 재취업을 위해서 집단 상담을 받게 되었습니다. 전문적인 선생님의 말씀을 들을 수 있어 좋...</div>
+                            </div>
+                        </div>
+                        <div> <!-- 더보기 버튼 -->
+                            <button class="rev-more">더보기 &gt;</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- 푸터 -->
+            <footer class="footer_layout-inner">
+                <div class="footer_top">
+                    <div class="footer_logo">
+                        <img src="../assets/img/logo.svg" alt="logo">
+                        <span>가제가제가제</span>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <p>개인정보처리방침</p>
+                    <small>ⓒ 2025 AAA. All rights reserved.</small>
+                </div>
+            </footer>
+        </div>
+    <script src="../js/main_002.js"></script>
+    </body>
+</html>
