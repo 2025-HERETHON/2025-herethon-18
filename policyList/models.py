@@ -27,8 +27,8 @@ class Policy(models.Model):
 
 class Like(models.Model):
     like_id = models.AutoField(primary_key=True)
-    user = models.ForeignKey('login.User', on_delete=models.CASCADE)
-    policy = models.ForeignKey(Policy, on_delete=models.CASCADE)
+    user = models.ForeignKey('login.User', on_delete=models.CASCADE, related_name="policylist_likes")
+    policy = models.ForeignKey(Policy, on_delete=models.CASCADE, related_name="policylist_policy_likes")
     created_at = models.DateTimeField(auto_now_add=True)
 
 
