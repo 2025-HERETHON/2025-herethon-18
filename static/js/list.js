@@ -4,12 +4,6 @@ document.querySelector('.mypage-btn')?.addEventListener('click', function () {
     window.location.href='myp_001.html'
 });
 
-
-// 수정하기 클릭시 기본정보 변경(myp_003.html)로 넘어감
-document.querySelector('.edit_btn')?.addEventListener('click', function () {
-    window.location.href='myp_003.html'
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const currentPage = window.location.pathname.split('/').pop();
 
