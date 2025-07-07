@@ -1,70 +1,105 @@
+// mypage 만들어졌을 경우 사용
+// 헤더 상단 닉네임 클릭 시, mypage(myp_001)로 이동
+document.querySelector('.mypage-btn')?.addEventListener('click', function () {
+    window.location.href='myp_001.html'
+});
+
+
+// 수정하기 클릭시 기본정보 변경(myp_003.html)로 넘어감
+document.querySelector('.edit_btn')?.addEventListener('click', function () {
+    window.location.href='myp_003.html'
+});
+
 document.addEventListener("DOMContentLoaded", function () {
-  const currentPage = window.location.pathname.split('/').pop();
+    const currentPage = window.location.pathname.split('/').pop();
 
-  document.querySelectorAll('.category_btn').forEach(link => {
-    const linkHref = link.getAttribute('href');
+    document.querySelectorAll('.category_btn').forEach(link => {
+        const linkHref = link.getAttribute('href');
 
-    if (linkHref && linkHref.endsWith(currentPage)) {
-      link.classList.add('active');
-    }
-  });
+        if (linkHref && linkHref.endsWith(currentPage)) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// 좋아요 수를 누르면 높은 순서로 정렬
+document.addEventListener("DOMContentLoaded", function () {
+    const sortingBtn = document.querySelector(".sorting_like");
+    const boardList = document.querySelector(".board_list");
+
+    sortingBtn.addEventListener("click", function () {
+        const items = Array.from(boardList.querySelectorAll(".board_item"));
+
+        // 좋아요 수 기준 내림차순 정렬
+        const sortedItems = items.sort((a, b) => {
+            const aLikes = parseInt(a.querySelector(".icon_item.like .count").textContent, 10);
+            const bLikes = parseInt(b.querySelector(".icon_item.like .count").textContent, 10);
+            return bLikes - aLikes;
+        });
+
+        sortedItems.forEach((item, index) => {
+            item.querySelector(".board_num").textContent = String(index + 1).padStart(2, '0');
+            boardList.appendChild(item);
+        });
+
+    });
 });
 
 
 
 // 좋아요, 북마크 +1 & 이미지 교체
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".icon_item").forEach(icon => {
-    icon.addEventListener("click", function () {
-      const img = this.querySelector("img");
-      const countSpan = this.querySelector(".count");
-      const type = this.getAttribute("data-type");
-      const isActive = this.classList.contains("active");
+    document.querySelectorAll(".icon_item").forEach(icon => {
+        icon.addEventListener("click", function () {
+            const img = this.querySelector("img");
+            const countSpan = this.querySelector(".count");
+            const type = this.getAttribute("data-type");
+            const isActive = this.classList.contains("active");
 
-      let count = parseInt(countSpan.textContent);
+            let count = parseInt(countSpan.textContent);
 
-      // 숫자 토글
-      if (isActive) {
-        this.classList.remove("active");
-        count--;
-      } else {
-        this.classList.add("active");
-        count++;
-      }
+            // 숫자 토글
+            if (isActive) {
+                this.classList.remove("active");
+                count--;
+            } else {
+                this.classList.add("active");
+                count++;
+            }
 
-      countSpan.textContent = count;
+            countSpan.textContent = count;
 
-      // 이미지 파일 경로 변경
-      let newSrc = "";
+            // 이미지 파일 경로 변경
+            let newSrc = "";
 
-      if (type === "like") {
-        newSrc = isActive
-          ? "/static/assets/img/like_btn.png"
-          : "/static/assets/img/full_heart_icon.png";
-      } else if (type === "bookmark") {
-        newSrc = isActive
-          ? "/static/assets/img/bookmark_icon.png"
-          : "/static/assets/img/full_bookmark_icon.png";
-      }
+            if (type === "like") {
+                newSrc = isActive
+                    ? "/static/assets/img/like_btn.png"
+                    : "/static/assets/img/full_heart_icon.png";
+            } else if (type === "bookmark") {
+                newSrc = isActive
+                    ? "/static/assets/img/bookmark_icon.png"
+                    : "/static/assets/img/full_bookmark_icon.png";
+            }
 
-      // 이미지 교체 (캐시 우회)
-      img.src = newSrc + "?v=" + new Date().getTime();
+            // 이미지 교체 (캐시 우회)
+            img.src = newSrc + "?v=" + new Date().getTime();
+        });
     });
-  });
 });
 
 //url 이동
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.board_item').forEach(item => {
-      item.addEventListener('click', function (e) {
-        // 좋아요/북마크 아이콘 클릭 시 이동 막기
-        if (e.target.closest('.icon_item')) return;
+        item.addEventListener('click', function (e) {
+            // 좋아요/북마크 아이콘 클릭 시 이동 막기
+            if (e.target.closest('.icon_item')) return;
 
-        const targetUrl = item.dataset.url;
-        if (targetUrl) {
-          // 새 탭으로 열기
-          window.open(targetUrl, '_blank');
-        }
-      });
+            const targetUrl = item.dataset.url;
+            if (targetUrl) {
+                // 새 탭으로 열기
+                window.open(targetUrl, '_blank');
+            }
+        });
     });
-  });
+});
