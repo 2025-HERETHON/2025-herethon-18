@@ -1,33 +1,33 @@
 /* 기본 여백 제거 및 박스 크기 설정 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* 기본 구조 설정 */
 html, body {
-    width: 100%;
-    height: 100%;
-    font-family: 'Pretendard', sans-serif;
-    background-color: #fff;
-    overflow-x: hidden;
-    overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* 리스트, 링크, 버튼 초기화 */
 ul, ol {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
 }

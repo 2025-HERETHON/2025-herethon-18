@@ -1,3 +1,8 @@
+// 헤더 상단 닉네임 클릭 시, mypage(myp_001)로 이동
+document.querySelector('.mypage-btn')?.addEventListener('click', function(){
+    window.location.href='myp_001.html'
+});
+
 document.getElementById("write-cancel-btn")?.addEventListener("click", () => {
             window.location.href = 'rev_001.html';
         });

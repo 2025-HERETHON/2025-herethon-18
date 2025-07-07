@@ -1,0 +1,127 @@
+.layout-outer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header_layout-inner {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #D8D8D8;
+}
+
+.header_layout-inner .logo {
+  margin-left: 80px;
+}
+
+.header_layout-inner .main_age {
+  font-size: 16px;
+  color: #595959;
+  margin-left: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.header_layout-inner .login_btn button {
+  background-color: #236DB9;
+  color: #fff;
+  width: 169px;
+  height: 54px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  margin-left: 1199px;
+  cursor: pointer;
+}
+
+/* main */
+.profile_title {
+  font-size: 42px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 660px;
+}
+
+.input_label {
+  font-size: 20px;
+  color: #595959;
+  margin-top: 50px;
+  font-weight: 500;
+}
+
+.input_box {
+  margin-top: 10px;
+  width: 600px;
+  height: 70px;
+  border-radius: 5px;
+  border: 1px solid #D8D8D8;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.age_title {
+  margin-top: 48px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #595959;
+  margin-left: 660px;
+}
+
+.age_group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  margin-left: 660px;
+}
+
+.age_section01,
+.age_section02 {
+  display: flex;
+  gap: 24px;
+}
+
+.age_section01 {
+  margin-top: 10px;
+}
+
+.age_section02 {
+  margin-top: 15px;
+}
+
+.age_btn {
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  font-size: 24px;
+  width: 184px;
+  height: 65px;
+}
+
+.age_btn.active {
+  background-color: #DCEEFF;
+  border-color: #D9D9D9;
+}
+
+.submit_btn {
+  background-color: #236DB9;
+  width: 600px;
+  height: 85px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  /* 링크일 경우 밑줄 제거 */
+  margin: 60px auto 0;
+  /* 가운데 정렬 및 상단 여백 */
+}

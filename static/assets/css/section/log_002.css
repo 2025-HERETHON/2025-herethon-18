@@ -1,0 +1,184 @@
+.layout-outer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header_layout-inner {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.header_layout-inner .logo {
+    margin-left: 80px;
+}
+
+.header_layout-inner .main_age {
+    font-size: 16px;
+    color: #595959;
+    margin-left: 30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.header_layout-inner .login_btn button {
+    background-color: #236DB9;
+    color: #fff;
+    width: 169px;
+    height: 54px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1199px;
+    cursor: pointer;
+}
+
+
+.layout-inner h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-top: 100px;
+}
+
+.layout-inner .signup_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-inner .signup_list label {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: #595959;
+    margin-top: 84px;
+}
+
+.signup_list {
+    margin-left: 660px;
+}
+
+.layout-inner .signup_list label input {
+    border: 1px solid #D8D8D8;
+    width: 600px;
+    height: 70px;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* 기본 체크박스 숨기기 */
+.agreement_list input[type="checkbox"] {
+    display: none;
+}
+
+/* 커스텀 체크박스 스타일 */
+.agreement_list .checkbox-style {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #9D9D9D;
+    border-radius: 4px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* 체크되었을 때 이미지로 변경 */
+.agreement_list input[type="checkbox"]:checked+.checkbox-style {
+    background-image: url('/static/assets/img/check_icon.png');
+    /* 사용한 이미지 경로 */
+    background-color: #62AFFF;
+    border-color: #62AFFF;
+}
+
+.agreement_list,
+.signup_btn {
+    margin-left: 660px;
+}
+
+.layout-inner .agreement_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-inner .agreement_list input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    color: #595959;
+}
+
+.layout-inner .agreement_list p {
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.layout-inner .agreement_list .required {
+    font-size: 16px;
+    color: #FF0000;
+}
+
+.layout-inner .agreement_list .terms_all {
+    margin-top: 22px;
+    font-size: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+    width: 600px;
+}
+
+.layout-inner .agreement_list .terms_items {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.layout-inner .agreement_list .terms_item {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.layout-inner .agreement_list .terms_item .required_item {
+    color: #FF0000;
+    font-size: 14px;
+}
+
+.layout-inner .agreement_list .terms_item .optional {
+    color: #656565;
+    font-size: 14px;
+}
+
+.layout-inner .signup_btn {
+    width: 600px;
+    height: 85px;
+    background-color: #236DB9;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.login_link {
+    margin-left: 853px;
+}
+
+.login_link a {
+    border-bottom: 1px solid #9D9D9D;
+}
+
+.layout-inner .login_link {
+    color: #9D9D9D;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}

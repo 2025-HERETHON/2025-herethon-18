@@ -3,6 +3,11 @@ document.querySelector('.rev-write-btn')?.addEventListener('click', function () 
     window.location.href='rev_002.html'
 });
 
+// 헤더 상단 닉네임 클릭 시, mypage(myp_001)로 이동
+document.querySelector('.mypage-btn')?.addEventListener('click', function(){
+    window.location.href='myp_001.html'
+});
+
 // 페이지 완전히 로드된 후 실행 
 document.addEventListener("DOMContentLoaded", function(){
     const reviewListEl = document.getElementById("review-list");

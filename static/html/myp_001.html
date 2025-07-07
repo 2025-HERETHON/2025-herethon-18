@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/reset.css">
+    <link rel="stylesheet" href="/static/assets/css/section/myp_001.css">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>마이페이지</title>
+</head>
+
+<body>
+    <div class="layout-outer">
+        <!-- 헤더 -->
+        <header class="header layout-inner">
+            <div class="header-inner">
+                <!-- 왼쪽 로고 + 연령 -->
+                <div class="left-header">
+                    <span class="logo"><strong>가제가제가제</strong></span>
+                    <span class="header-age-label">전연령</span>
+                </div>
+
+                <!-- 오른쪽 후기,멘토질문방,커뮤니티 버튼 -->
+                <div class="right-header">
+                    <div class="btns">
+                        <button class="review-btn">후기</button>
+                        <button class="qna-btn">멘토 질문방</button>
+                        <button class="com-btn">커뮤니티</button>
+                        <button class="mypage-btn">
+                            <img src="/static/assets/img/dag.png">
+                            <span id="user-nickname"></span>
+                        </button>
+                    </div>
+                </div>
+        </header>
+
+        <main class="layout-inner">
+            <!--사용자 정보-->
+            <section class="user_info">
+                <h2>마이페이지</h2>
+                <div class="info_card">
+                    <div class="info_section01">
+                        <p><span id="user_name">홍길동</span><span class="user_name_fix">님</span></p>
+                        <button class="edit_btn">
+                            <img src="/static/assets/img/pencil.png" alt="수정아이콘">
+                            수정하기
+                        </button>
+                    </div>
+                    <div class="info_section02">
+                        <div class="info_row">
+                            <span class="label">이메일</span>
+                            <span class="value" id="user_email">이메일정보</span>
+                        </div>
+                        <div class="info_row">
+                            <span class="label">생년월일</span>
+                            <span class="value" id="user_birth">생년월일정보</span>
+                        </div>
+                        <div class="info_row">
+                            <span class="label">휴대폰</span>
+                            <span class="value" id="user_phone">휴대폰정보</span>
+                        </div>
+                        <div class="info_row">
+                            <span class="label">나이설정</span>
+                            <span class="value" id="user_region">나이설정정보</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--내 활동-->
+            <section class="user_activity">
+                <h2>내 활동</h2>
+                <div class="activity_box">
+                    <!-- 좋아요 한 글 -->
+                    <a href="myp_005.html" class="activity_item" style="text-decoration: none;">
+                        <img src="/static/assets/img/like_btn.png" alt="좋아요 아이콘">
+                        <span>좋아요 한 글</span>
+                    </a>
+
+                    <!-- 스크랩 한 글 -->
+                    <a href="myp_007.html" class="activity_item" style="text-decoration: none;">
+                        <img src="/static/assets/img/bookmark_icon.png" alt="스크랩 아이콘">
+                        <span>스크랩 한 글</span>
+                    </a>
+                </div>
+            </section>
+            <!--후기 관리-->
+            <section class="review_section">
+                <ul id="review_list" class="review_list">
+                    <!-- 후기 아이템이 JS로 삽입됨 -->
+                </ul>
+
+                <p id="no_review" class="no_review" style="display: none;">
+                    작성한 후기가 없습니다.
+                </p>
+
+                <div class="pagination">
+                    <button class="prev_btn"><img src="/static/assets/img/prev_btn.png"></button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button class="prev_btn"><img src="/static/assets/img/next_btn.png"></button>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+    <footer class="footer_layout-inner">
+        <div class="footer_top">
+            <div class="footer_logo">
+                <img src="../assets/img/logo.svg" alt="logo">
+                <span>가제가제가제</span>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <p>개인정보처리방침</p>
+            <small>ⓒ 2025 AAA. All rights reserved.</small>
+        </div>
+    </footer>
+    </div>
+</body>
+<script src="/static/js/myp_001.js"></script>
+
+</html>
