@@ -2,34 +2,37 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/static/assets/css/section/log_001.css">
-  <link rel="stylesheet" href="/static/assets/css/style.css">
-  <link rel="stylesheet" href="/static/assets/css/reset.css">
-  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/assets/css/section/log_001.css" />
+  <link rel="stylesheet" href="/static/assets/css/style.css" />
+  <link rel="stylesheet" href="/static/assets/css/reset.css" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
   <title>log_001</title>
 </head>
 
 <body>
   <div class="layout-outer">
     <header class="header_layout-inner">
-      <img class="logo" src="/static/assets/img/logo.png" alt="logo">
+      <img class="logo" src="/static/assets/img/logo.png" alt="logo" />
       <div class="main_age">전연령</div>
-      <div class="login_btn"><button>로그인/회원가입</button></div>
+      <div class="login_btn">
+        <button>로그인/회원가입</button>
+      </div>
     </header>
 
     <main class="layout-inner">
       <h2>로그인</h2>
       <div class="login_main">
-        <input class="login_id" type="text" placeholder="아이디를 입력하세요.">
-        <input class="login_password" type="password" placeholder="비밀번호를 입력하세요.">
-        <button onclick="location.href='/static/html/main_002.html'">로그인</button>
+        <input class="login_id" type="text" placeholder="아이디를 입력하세요." />
+        <input class="login_password" type="password" placeholder="비밀번호를 입력하세요." />
+        <button class="login_btn_submit">로그인</button>
 
         <div class="options">
           <label class="custom_checkbox">
-            <input type="checkbox" id="auto-login">
+            <input type="checkbox" id="auto-login" />
             <span class="checkbox_style"></span>
             <span class="label-text">자동 로그인</span>
           </label>
@@ -45,7 +48,7 @@
     <footer class="footer_layout-inner">
       <div class="footer_top">
         <div class="footer_logo">
-          <img src="../assets/img/logo.svg" alt="logo">
+          <img src="../assets/img/logo.svg" alt="logo" />
           <span>가제가제가제</span>
         </div>
       </div>
@@ -55,6 +58,8 @@
       </div>
     </footer>
   </div>
+
+  <script src="/static/js/log_001.js"></script>
 </body>
 
 </html>
