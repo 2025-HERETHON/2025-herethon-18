@@ -64,4 +64,27 @@ document.addEventListener("DOMContentLoaded", function(){
         // 완성된 카드 요소를 reviewListEL에 추가하여 화면에 표시
         reviewListEl.appendChild(card);
     })
-})
+});
+
+
+// 헤더 유저 닉네임으로 바뀌기 (더미데이터 사용)
+const dummyLoginResponse = {
+    accessToken: "eyJhbGciOiJIUzI1NiIs...",
+    refreshToken: "eyJhbGciOiJIUzI1NiIs...",
+    user: {
+        userId: 12,
+        nickname: "강아지가짱",
+        ageRange: "대학생·청년"
+    }
+};
+// localStorage에 저장 (세션 유지용)
+localStorage.setItem("user", JSON.stringify(dummyLoginResponse.user));
+
+document.addEventListener("DOMContentLoaded", () => {
+    const userData = JSON.parse(localStorage.getItem("user")); // 저장된 사용자 정보 불러오기
+    const nicknameSpan = document.getElementById("user-nickname");
+
+    if (userData && nicknameSpan) {
+        nicknameSpan.textContent = userData.nickname;
+    }
+}); 
