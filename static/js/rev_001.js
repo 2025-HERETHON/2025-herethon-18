@@ -1,3 +1,8 @@
+// 헤더 상단 제목 클릭 시, main_002 화면으로 이동 
+document.querySelector('.logo')?.addEventListener('click', function () {
+    window.location.href = 'main_002.html'
+});
+
 // 후기 쓰기 버튼 누르면 rev_002.html로 이동
 document.querySelector('.rev-write-btn')?.addEventListener('click', function () {
     window.location.href='rev_002.html'
