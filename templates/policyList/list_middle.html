@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'assets/css/section/list_001.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>list_001_중장년</title>
+</head>
+
+<body>
+    <div class="layout-outer">
+        <!-- 헤더 -->
+        <header class="header layout-inner">
+            <div class="header-inner">
+                <!-- 왼쪽 로고 + 연령 -->
+                <div class="left-header">
+                    <span class="logo"><strong>가제가제가제</strong></span>
+                    <span class="header-age-label">중장년</span>
+                </div>
+
+                <!-- 오른쪽 후기,멘토질문방,커뮤니티 버튼 -->
+                <div class="right-header">
+                    <div class="btns">
+                        <button class="review-btn">후기</button>
+                        <button class="qna-btn">멘토 질문방</button>
+                        <button class="com-btn">커뮤니티</button>
+                        <button class="mypage-btn">
+                            <img src="/static/assets/img/dag.png">
+                            강아지가 멍멍
+                        </button>
+                    </div>
+                </div>
+        </header>
+
+        <main class="layout-inner">
+
+            <!--연령 카테고리-->
+            <div class="category_filter">
+                <a href="list_infant.html" class="category_btn">영유아</a>
+                <a href="list_teen.html" class="category_btn">청소년</a>
+                <a href="list_youth.html" class="category_btn">대학생·청년</a>
+                <a href="list_middle.html" class="category_btn">중장년</a>
+                <a href="list_elder.html" class="category_btn">노인</a>
+                <a href="list_001.html" class="category_btn">전연령</a>
+            </div>
+
+
+            <!--좋아요 수 정렬-->
+            <div class="sorting_like">
+                <img src="/static/assets/img/sortin_icon.png" alt="정렬아이콘">
+                <p>좋아요 수</p>
+            </div>
+
+            <!--게시글 목록-->
+            <ul class="board_list">
+                {% for policy in policies %}
+                <li class="board_item" data-url="#">
+                    <span class="board_num">{{ forloop.counter0|add:page_obj.start_index }}</span>
+                    <div class="board-content">
+                        <p class="board-title">{{ policy.policy_name }}</p>
+                        <p class="board-category">{{ policy.department }}</p>
+                    </div>
+                    <div class="board_icons">
+                        <div class="icon_item like" data-type="like">
+                            <img src="/static/assets/img/like_btn.png" alt="좋아요">
+                            <span class="count">{{ policy.like_count }}</span>
+                        </div>
+                        <div class="icon_item bookmark" data-type="bookmark">
+                            <img src="/static/assets/img/bookmark_icon.png" alt="북마크">
+                            <span class="count">{{ policy.scrap_count }}</span>
+                        </div>
+                    </div>
+                </li>
+                {% empty %}
+                <li class="board_item">
+                    <p>표시할 정책이 없습니다.</p>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <!--페이지네이션-->
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}">
+                        <button class="prev_btn">
+                            <img src="/static/assets/img/prev_btn.png" alt="이전">
+                        </button>
+                    </a>
+                {% endif %}
+            
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <button class="active">{{ num }}</button>
+                    {% else %}
+                        <a href="?page={{ num }}"><button>{{ num }}</button></a>
+                    {% endif %}
+                {% endfor %}
+            
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&sort={{ sort }}"></a>
+                        <button class="next_btn">
+                            <img src="/static/assets/img/next_btn.png" alt="다음">
+                        </button>
+                    </a>
+                {% endif %}
+            </div>
+
+    <footer class="footer_layout-inner">
+        <div class="footer_top">
+            <div class="footer_logo">
+                <img src="../assets/img/logo.svg" alt="logo">
+                <span>가제가제가제</span>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <p>개인정보처리방침</p>
+            <small>ⓒ 2025 AAA. All rights reserved.</small>
+        </div>
+    </footer>
+    </div>
+    <script src="{% static 'assets/js/list.js' %}"></script>
+</body>
+
+
+</html>
