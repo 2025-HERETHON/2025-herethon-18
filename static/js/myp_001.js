@@ -4,10 +4,11 @@ document.querySelector('.mypage-btn')?.addEventListener('click', function () {
     window.location.href = 'myp_001.html'
 });
 
-// 수정하기 클릭시 기본정보 변경(myp_003.html)로 넘어감
+// 수정하기 버튼 준비중
 document.querySelector('.edit_btn')?.addEventListener('click', function () {
-    window.location.href='myp_003.html'
+    alert("수정 기능은 현재 준비 중입니다.");
 });
+
 
 // 로그인된 유저 정보
 const user = {
@@ -134,10 +135,10 @@ function attachReviewEvent() {
 
     reviewList.querySelectorAll(".edit").forEach(editBtn => {
         editBtn.addEventListener("click", function (e) {
-            const id = e.target.closest(".review_item").dataset.id;
-            window.location.href = `/edit_review.html?id=${id}`;
+            alert("후기 수정 기능은 현재 준비 중입니다."); // 페이지 이동 제거
         });
     });
+
 
     reviewList.querySelectorAll(".delete").forEach(delBtn => {
         delBtn.addEventListener("click", function (e) {
