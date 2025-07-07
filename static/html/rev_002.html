@@ -35,24 +35,26 @@
 
             <!-- 메인 -->
             <main>
-                <!-- 제목 부분 -->
-                <div class="write-title">
-                    <h3>제목</h3>
-                    <input type="text" id="write-input" placeholder="복지 서비스를 입력하세요." />
-                    <img src="../assets/img/Vector 6.png" />
-                </div>
-                
-                <!-- 후기 작성 부분 -->
-                <div class="write-content">
-                    <h3>후기 작성</h3>
-                    <textarea id="write-content" placeholder="후기를 작성해주세요!"></textarea>
-                </div>
+                <form action = "/reviews/" method="POST" class="write-form">
+                    <!-- 제목 부분 -->
+                    <div class="write-title">
+                        <h3>제목</h3>
+                        <input type="text" id="write-input" name="title" placeholder="복지 서비스를 입력하세요." />
+                        <img src="../assets/img/Vector 6.png" />
+                    </div>
+                    
+                    <!-- 후기 작성 부분 -->
+                    <div class="write-content">
+                        <h3>후기 작성</h3>
+                        <textarea id="write-content" name="content" placeholder="후기를 작성해주세요!"></textarea>
+                    </div>
 
-                <!-- 취소 버튼, 등록 버튼 -->
-                <div class="upload-yn">
-                    <button id="write-cancel-btn">취소</button>
-                    <button id="write-upload-btn">등록하기</button>
-                </div>
+                    <!-- 취소 버튼, 등록 버튼 -->
+                    <div class="upload-yn">
+                        <button type="button" id="write-cancel-btn">취소</button>
+                        <button type="submit" id="write-upload-btn">등록하기</button>
+                    </div>
+                </form>
             </main>
 
             <!-- 푸터 -->
@@ -69,6 +71,10 @@
                     </div>
             </footer>
         </div>
-    <script src="../js/rev_002.js"></script>
+    <script>
+        document.getElementById("write-cancel-btn")?.addEventListener("click", () => {
+            window.location.href = 'rev_001.html';
+        });
+    </script>
     </body>
 </html>
