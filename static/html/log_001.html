@@ -25,14 +25,16 @@
 
     <main class="layout-inner">
       <h2>로그인</h2>
-      <div class="login_main">
-        <input class="login_id" type="text" placeholder="아이디를 입력하세요." />
-        <input class="login_password" type="password" placeholder="비밀번호를 입력하세요." />
-        <button class="login_btn_submit">로그인</button>
+
+      <!-- form 추가 시작 -->
+      <form class="login_main" action="/login" method="POST">
+        <input class="login_id" type="text" name="username" placeholder="아이디를 입력하세요." required />
+        <input class="login_password" type="password" name="password" placeholder="비밀번호를 입력하세요." required />
+        <button class="login_btn_submit" type="submit">로그인</button>
 
         <div class="options">
           <label class="custom_checkbox">
-            <input type="checkbox" id="auto-login" />
+            <input type="checkbox" id="auto-login" name="auto_login" />
             <span class="checkbox_style"></span>
             <span class="label-text">자동 로그인</span>
           </label>
@@ -42,7 +44,9 @@
             <a href="../html/log_002.html"> 회원가입</a>
           </div>
         </div>
-      </div>
+      </form>
+      <!-- form 추가 끝 -->
+
     </main>
 
     <footer class="footer_layout-inner">

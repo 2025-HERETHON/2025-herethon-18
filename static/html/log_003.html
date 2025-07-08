@@ -24,43 +24,45 @@
     <main class="layout-inner">
       <h2 class="profile_title">프로필 설정</h2>
 
-      <!--프로필 내용 입력 필드-->
-      <!-- 닉네임 -->
-      <div class="input_group">
-        <label class="input_label">닉네임</label>
-        <input type="text" placeholder="3자리 이상" class="input_box">
-      </div>
-
-      <!-- 생년월일 -->
-      <div class="input_group">
-        <label class="input_label">생년월일</label>
-        <input type="password" placeholder="8자리 입력" class="input_box">
-      </div>
-
-      <!-- 휴대폰번호 -->
-      <div class="input_group">
-        <label class="input_label">휴대폰번호</label>
-        <input type="text" placeholder="휴대폰번호 입력 ('-' 제외)" class="input_box">
-      </div>
-
-
-      <!--나이 선택-->
-      <div class="age_title">나이 설정</div>
-      <div class="age_group">
-        <div class="age_section01">
-          <button type="button" class="age_btn">영유아</button>
-          <button type="button" class="age_btn">청소년</button>
-          <button type="button" class="age_btn">대학생·청년</button>
+      <form action="/profile" method="POST" id="profileForm">
+        <!-- 닉네임 -->
+        <div class="input_group">
+          <label class="input_label">닉네임</label>
+          <input type="text" name="nickname" placeholder="3자리 이상" class="input_box" required />
         </div>
-        <div class="age_section02">
-          <button type="button" class="age_btn">중장년</button>
-          <button type="button" class="age_btn">노인</button>
-          <button type="button" class="age_btn">전연령</button>
-        </div>
-      </div>
-      <button class="submit_btn" id="submitBtn">회원가입</button>
 
+        <!-- 생년월일 -->
+        <div class="input_group">
+          <label class="input_label">생년월일</label>
+          <input type="password" name="birthdate" placeholder="8자리 입력" class="input_box" required />
+        </div>
+
+        <!-- 휴대폰번호 -->
+        <div class="input_group">
+          <label class="input_label">휴대폰번호</label>
+          <input type="text" name="phone" placeholder="휴대폰번호 입력 ('-' 제외)" class="input_box" required />
+        </div>
+
+        <!-- 나이 선택 -->
+        <div class="age_title">나이 설정</div>
+        <div class="age_group">
+          <div class="age_section01">
+            <button type="button" class="age_btn">영유아</button>
+            <button type="button" class="age_btn">청소년</button>
+            <button type="button" class="age_btn">대학생·청년</button>
+          </div>
+          <div class="age_section02">
+            <button type="button" class="age_btn">중장년</button>
+            <button type="button" class="age_btn">노인</button>
+            <button type="button" class="age_btn">전연령</button>
+          </div>
+        </div>
+        <input type="hidden" name="age_group" id="selectedAge" />
+
+        <button class="submit_btn" type="submit" id="submitBtn">회원가입</button>
+      </form>
     </main>
+
   </div>
 
   <footer class="footer_layout-inner">
