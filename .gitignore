@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django migrations
+*/migrations/__pycache__/
+*.sqlite3
+
+# Virtual environment
+venv/
+ENV/
+env/
+
+# VSCode settings (만약 VSCode 쓰면)
+.vscode/
+
+# macOS
+.DS_Store
+
+# Env file
+.env
+
+# Logs
+*.log

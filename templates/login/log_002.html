@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/login/log_002.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>log_002</title>
+</head>
+
+<body>
+    <div class="layout-outer">
+        <header class="header_layout-inner">
+            <img class="logo" src="{% static 'assets/image/logo.png' %}" alt="logo">
+            <div class="main_age">전연령</div>
+            <div class="login_btn"><button>로그인/회원가입</button></div>
+        </header>
+
+        <main class="layout-inner">
+            <div class="signup_wrap">
+                <h2>회원가입</h2>
+                <div class="signup_list">
+                    <label>이름
+                        <input type="text" class="input_info" placeholder="이름을 입력하세요.">
+                    </label>
+                    <label>이메일
+                        <input type="email" class="input_info" placeholder="abc12345@abc.kr">
+                    </label>
+                    <label>비밀번호
+                        <input type="password" class="input_info" placeholder="영문, 숫자, 특수문자를 사용한 8~20자">
+                    </label>
+                    <label>비밀번호 확인
+                        <input type="password" class="input_info" placeholder="위의 비밀번호를 다시 입력해주세요.">
+                    </label>
+                </div>
+
+                <div class="agreement_list">
+                    <p>약관동의<span class="required">(필수)</span></p>
+
+                    <div class="terms_all">
+                        <label>
+                            <input type="checkbox" id="checkAll" />
+                            <span class="checkbox-style"></span> 전체동의
+                        </label>
+                    </div>
+
+                    <div class="terms_items">
+                        <div class="terms_item">
+                            <label>
+                                <input type="checkbox" class="terms" />
+                                <span class="checkbox-style"></span> 이용약관에 동의
+                                <span class="required_item">(필수)</span>
+                            </label>
+                        </div>
+                        <div class="terms_item">
+                            <label>
+                                <input type="checkbox" class="terms" />
+                                <span class="checkbox-style"></span> 개인정보 수집 및 이용에 동의
+                                <span class="required_item">(필수)</span>
+                            </label>
+                        </div>
+                        <div class="terms_item">
+                            <label>
+                                <input type="checkbox" class="terms" />
+                                <span class="checkbox-style"></span> 마케팅 정보 수신 동의
+                                <span class="optional">(선택)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 회원가입 버튼 -->
+                <a href="{% url 'log_003' %}" class="signup_btn">다음 단계</a>
+
+                <!-- 로그인으로 이동 -->
+                <div class="login_link">
+                    이미 가입하셨다면? <a href="{% url 'log_001' %}">로그인</a>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <footer class="footer_layout-inner">
+        <div class="footer_top">
+            <div class="footer_logo">
+                <img src="../assets/img/logo.svg" alt="logo">
+                <span>가제가제가제</span>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <p>개인정보처리방침</p>
+            <small>ⓒ 2025 AAA. All rights reserved.</small>
+        </div>
+    </footer>
+    </div>
+</body>
+
+<script src="/static/js/log_002.js"></script>
+
+</html>

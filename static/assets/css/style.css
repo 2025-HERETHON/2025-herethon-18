@@ -1,0 +1,81 @@
+.layout-outer{
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.layout-inner {
+  width: 1920px;
+  margin: 0 auto;
+}
+
+/* 로그아웃 시 main 화면 (그래프 부분) 전용 */
+.main1_layout-inner{
+  width: 1920px;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+
+
+/* 공통 푸터 스타일 */
+
+.footer_layout-inner {
+  display: flex;
+  width: 1920px;
+  height: 272px;
+  padding: 48px 80px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #F0F0F0;
+  margin-top: 306px;  /* 페이지에 맞추어 수정 */
+}
+
+.footer_top{
+  display: flex;
+  align-items: center;
+}
+
+.footer_top span{
+  color: #000;
+  font-family: Pretendard;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.footer_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer_logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer_bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer_bottom p {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.footer_bottom small {
+  color: #999;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
