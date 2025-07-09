@@ -1,10 +1,28 @@
 from django.shortcuts import render, redirect
 from .models import User
 from django.contrib import messages
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password, check_password
 
 # 로그인 페이지 : log_001
 def login(request):
+    if request.method == "POST":
+        nickname = request.POST.get('username')  # HTML 폼에서의 name="username"
+        password = request.POST.get('password')  # name="password"
+
+        try:
+            user = User.objects.get(name=nickname)  # 'username' 필드 맞는지 모델에서 확인 필요
+        except User.DoesNotExist:
+            messages.error(request, '존재하지 않는 사용자입니다.')
+            return render(request, 'login/log_001.html')
+
+        if check_password(password, user.password):
+            request.session['user_id'] = user.id
+            request.session['name'] = user.username
+            return redirect('main_002')  # 로그인 성공 시 메인 페이지
+        else:
+            messages.error(request, '비밀번호가 일치하지 않습니다.')
+            return render(request, 'login/log_001.html')
+
     return render(request, 'login/log_001.html')
 
 # 회원가입 1 페이지
