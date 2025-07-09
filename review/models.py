@@ -1,11 +1,14 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 
+User = get_user_model()
+
 class Review(models.Model):
     review_id = models.AutoField(primary_key=True)
-    policy = models.ForeignKey('policyList.Policy', on_delete=models.CASCADE)
-    user = models.ForeignKey('login.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+    title = models.CharField(max_length=100, default='제목 없음')
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -13,5 +16,6 @@ class Review(models.Model):
 class Like(models.Model):
     like_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('login.User', on_delete=models.CASCADE, related_name="review_likes")
-    policy = models.ForeignKey('policyList.Policy', on_delete=models.CASCADE, related_name="review_policy_likes")
     created_at = models.DateTimeField(auto_now_add=True)
+
+
