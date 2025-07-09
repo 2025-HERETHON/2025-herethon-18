@@ -67,5 +67,5 @@ def setting_2(request):
         # 세션 정리
         del request.session['signup_info']
 
-        return redirect('login')
+        return redirect('log_001')
     return render(request, 'login/log_003.html')
