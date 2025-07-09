@@ -4,4 +4,5 @@ from review.models import Review
 from login.models import User  # 홈 헤더에 연령대 표시
 
 
-# Create your views here.
+def home(request):
+    return render(request, 'main/main_002.html')
