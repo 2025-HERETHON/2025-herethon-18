@@ -26,22 +26,25 @@
       <h2 class="profile_title">프로필 설정</h2>
 
       <!--프로필 내용 입력 필드-->
+      <form action="/login/setting_2/" method="POST" id="profileForm">
+        {% csrf_token %}
       <!-- 닉네임 -->
       <div class="input_group">
         <label class="input_label">닉네임</label>
-        <input type="text" placeholder="3자리 이상" class="input_box">
+        <input type="text" id="nickname" name="nickname" placeholder="3자리 이상" class="input_box" required />
       </div>
 
       <!-- 생년월일 -->
       <div class="input_group">
         <label class="input_label">생년월일</label>
-        <input type="password" placeholder="8자리 입력" class="input_box">
+          <input type="password" id="birthdate" name="birthdate" placeholder="8자리 입력" class="input_box" required />
       </div>
 
       <!-- 휴대폰번호 -->
       <div class="input_group">
         <label class="input_label">휴대폰번호</label>
-        <input type="text" placeholder="휴대폰번호 입력 ('-' 제외)" class="input_box">
+          <input type="text" id="phone" name="phone" placeholder="휴대폰번호 입력 ('-' 제외)" class="input_box" required />
+
       </div>
 
 
@@ -59,7 +62,9 @@
           <button type="button" class="age_btn">전연령</button>
         </div>
       </div>
-      <a href="/static/html/log_001.html" class="submit_btn">회원가입</a>
+        <input type="hidden" name="age_group" id="selectedAge" />
+        <button class="submit_btn" type="submit" id="submitBtn">회원가입</button>
+      </form>
     </main>
   </div>
 
