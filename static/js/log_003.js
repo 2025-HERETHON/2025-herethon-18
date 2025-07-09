@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    document.getElementById('selectedAge').value = selectedAge.trim();
+
     // 통과 → 회원가입 완료 페이지로 이동
     window.location.href = "/static/html/log_001.html";
   });
