@@ -23,7 +23,9 @@
 
     <main class="layout-inner">
       <h2>로그인</h2>
-      <form class="login_main" action="/login" method="POST">
+      <form class="login_main" action="/login/" method="POST">
+        {% csrf_token %}
+
         <input class="login_id" type="text" id="username" name="username" placeholder="아이디를 입력하세요." required />
         <input class="login_password" type="password" id="password" name="password" placeholder="비밀번호를 입력하세요." required />
         <button class="login_btn_submit" type="submit">로그인</button>

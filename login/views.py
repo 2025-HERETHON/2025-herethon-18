@@ -10,14 +10,19 @@ def login(request):
         password = request.POST.get('password')  # name="password"
 
         try:
-            user = User.objects.get(name=nickname)  # 'username' 필드 맞는지 모델에서 확인 필요
+            user = User.objects.get(nickname=nickname)  # 'username' 필드 맞는지 모델에서 확인 필요
         except User.DoesNotExist:
             messages.error(request, '존재하지 않는 사용자입니다.')
             return render(request, 'login/log_001.html')
 
+            # 디버깅 로그
+            print("입력된 패스워드:", password)
+            print("DB에 저장된 패스워드:", user.password)
+            print("check_password 결과:", check_password(password, user.password))
+
         if check_password(password, user.password):
-            request.session['user_id'] = user.id
-            request.session['name'] = user.username
+            request.session['user_id'] = user.user_id
+            request.session['name'] = user.nickname
             return redirect('main_002')  # 로그인 성공 시 메인 페이지
         else:
             messages.error(request, '비밀번호가 일치하지 않습니다.')
