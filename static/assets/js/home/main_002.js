@@ -27,11 +27,11 @@ document.querySelector('.mypage-btn')?.addEventListener('click', function(){
 
 // 각 그래프 클릭하면 해당하는 연령대 페이지로 이동
 const agePages = {
-    infant: 'main_infant.html',
-    teen: 'main_teen.html',
-    youth: 'main_youth.html',
-    middle: 'main_middle.html',
-    elder: 'main_elder.html'
+    infant: '/home/infant',
+    teen: '/home/teen',
+    youth: '/home/youth',
+    middle: '/home/middle',
+    elder: '/home/elder'
 };
 
 document.querySelectorAll('.graph-item').forEach(item => {
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function(){
             li.innerHTML = `
                 <span class="pop-rank">${String(index+1).padStart(2, "0")}</span>
                 <span class="pop-desc">${policy.policy_name}</span>
-                <span class="pop-like-number"><img src="../assets/img/heart.png">${policy.like_count}</span>
+                <span class="pop-like-number"><img src="{% static 'assets/image/heart.png' %}">${policy.like_count}</span>
             `
 
             // 완성된 li 요소를 ul인 .popular-list에 추가

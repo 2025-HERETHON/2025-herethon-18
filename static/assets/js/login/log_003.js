@@ -36,7 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // 통과 → 회원가입 완료 페이지로 이동
-    window.location.href = "/static/html/log_001.html";
+    // 선택한 연령대를 hidden input에 넣어주기
+    document.getElementById("age_group_input").value = selectedAge;
+
+    // 유효성 통과 → form 제출
+    document.querySelector('form').submit();
   });
+
 });
