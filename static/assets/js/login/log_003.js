@@ -1,3 +1,8 @@
+// 헤더 상단 제목 클릭 시, main_002 화면으로 이동
+document.querySelector('.logo')?.addEventListener('click', function () {
+    window.location.href = 'main_002.html'
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const ageButtons = document.querySelectorAll('.age_btn');
   let selectedAge = "";
@@ -10,8 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 회원가입 버튼 클릭 시
-  document.getElementById('submitBtn').addEventListener('click', () => {
+  document.getElementById('submitBtn').addEventListener('click', (e) => {
+    e.preventDefault(); // 폼 기본 제출 막기 (JS 유효성검사 후 수동 제출)
+
     const nickname = document.querySelectorAll('.input_box')[0].value.trim();
     const birth = document.querySelectorAll('.input_box')[1].value.trim();
     const phone = document.querySelectorAll('.input_box')[2].value.trim();
@@ -36,11 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // 선택한 연령대를 hidden input에 넣어주기
-    document.getElementById("age_group_input").value = selectedAge;
+    document.getElementById('selectedAge').value = selectedAge.trim();
 
-    // 유효성 통과 → form 제출
-    document.querySelector('form').submit();
+    // 유효성 통과 → form submit
+    document.getElementById('profileForm').submit();
   });
-
 });
