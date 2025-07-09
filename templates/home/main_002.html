@@ -39,6 +39,7 @@
                             </button>
                         </div>
                 </div>
+                    </div>
             </header>
 
             <!-- 메인 -->
@@ -49,8 +50,8 @@
                         <div class="graph-item" data-age="infant">
                             <div>
                                 <img src="{% static 'assets/image/Vector 1.png' %}"
-                                onmouseover="this.src='../assets/img/Vector 1-hover.png'"
-                                onmouseout="this.src='../assets/img/Vector 1.png'">
+                                onmouseover="this.src="{% static 'assets/image/Vector 1-hover.png' %}""
+                                onmouseout="this.src="{% static 'assets/image/Vector 1.png' %}"">
                             </div>
                             <div class="age-text">
                                 <span class="main-age-label">영유아</span>
@@ -60,8 +61,8 @@
                         <div class="graph-item" data-age="teen">
                             <div>
                                 <img src="{% static 'assets/image/Vector 2.png' %}"
-                                onmouseover="this.src='../assets/img/Vector 2-hover.png'"
-                                onmouseout="this.src='../assets/img/Vector 2.png'">
+                                onmouseover="this.src="{% static 'assets/image/Vector 2-hover.png' %}""
+                                    onmouseout="this.src="{% static 'assets/image/Vector 2.png' %}"">
                             </div>
                             <div class="age-text">
                                 <span class="main-age-label">청소년</span>
@@ -71,8 +72,8 @@
                         <div class="graph-item" data-age="youth">
                             <div>
                                 <img src="{% static 'assets/image/Vector 3.png' %}"
-                                onmouseover="this.src='../assets/img/Vector 3-hover.png'"
-                                onmouseout="this.src='../assets/img/Vector 3.png'">
+                                onmouseover="this.src="{% static 'assets/image/Vector 3-hover.png' %}""
+                                    onmouseout="this.src="{% static 'assets/image/Vector 3.png' %}"">
                             </div>
                             <div class="age-text">
                                 <span class="main-age-label">대학생·청년</span>
@@ -82,8 +83,8 @@
                         <div class="graph-item" data-age="middle">
                             <div>
                                 <img src="{% static 'assets/image/Vector 4.png' %}"
-                                onmouseover="this.src='../assets/img/Vector 4-hover.png'"
-                                onmouseout="this.src='../assets/img/Vector 4.png'">
+                                     onmouseover="this.src="{% static 'assets/image/Vector 4-hover.png' %}""
+                                    onmouseout="this.src="{% static 'assets/image/Vector 4.png' %}"">
                             </div>
                             <div class="age-text">
                                 <span class="main-age-label">중장년</span>
@@ -93,8 +94,8 @@
                         <div class="graph-item" data-age="elder">
                             <div>
                                 <img src="{% static 'assets/image/Vector 5.png' %}"
-                                onmouseover="this.src='../assets/img/Vector 5-hover.png'"
-                                onmouseout="this.src='../assets/img/Vector 5.png'">
+                                onmouseover="this.src="{% static 'assets/image/Vector 5-hover.png' %}""
+                                    onmouseout="this.src="{% static 'assets/image/Vector 5.png' %}"">
                             </div>
                             <div class="age-text">
                                 <span class="main-age-label">노인</span>
@@ -118,7 +119,7 @@
                     <!-- 복지 인기 순위 -->
                     <div class="popular-box-wrapper">
                         <div class="popular-title">
-                            <div><img src="../assets/img/fire.svg" alt="불꽃 아이콘"></div>
+                            <img src="{% static 'assets/image/fire.svg' %}" alt="불꽃 아이콘">
                             <div><strong>전연령</strong>에게 관심이 많은 복지는?</div>
                         </div>
 
@@ -131,7 +132,7 @@
                     <!-- 후기 전체 박스 -->
                     <div class="rev-box-wrapper">
                         <div class="rev-top"> <!-- 상단 타이틀 -->
-                            <img src="../assets/img/fish.svg" alt="fish">
+                            <img src="{% static 'assets/image/fish.svg' %}" alt="fish">
                             <span>생생한 <strong>후기</strong> 확인하기</span>
                         </div>
                         <div class="rev-bottom"> <!-- 후기 내용들 -->
@@ -141,7 +142,6 @@
                             <button class="rev-more">더보기 &gt;</button>
                         </div>
                     </div>
-                </div>
 
             </main>
 
@@ -159,6 +159,8 @@
                 </div>
             </footer>
         </div>
-    <script src="../js/main_002.js"></script>
+
+        <script src="/static/js/main_002.js"></script>
+
     </body>
 </html>
