@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(' ', include('login.urls')), # 차후 기본 url로 수정 필요 !!
     path('login/', include('login.urls')),
+    path('home/', include('home.urls')),
 ]
