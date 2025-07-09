@@ -8,16 +8,16 @@ def home(request):
     return render(request, 'home/main_002.html')
 
 def home_infant(request):
-    return render(request, 'home/home_infant.html')
+    return render(request, 'home/main_infant.html')
 
 def home_teen(request):
-    return render(request, 'home/home_teen.html')
+    return render(request, 'home/main_teen.html')
 
 def home_youth(request):
-    return render(request, 'home/home_youth.html')
+    return render(request, 'home/main_youth.html')
 
 def home_middle(request):
-    return render(request, 'home/home_middle.html')
+    return render(request, 'home/main_middle.html')
 
 def home_elder(request):
     return render(request, 'home/main_elder.html')
