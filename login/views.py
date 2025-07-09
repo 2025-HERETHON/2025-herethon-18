@@ -16,9 +16,9 @@ def login(request):
             return render(request, 'login/log_001.html')
 
             # 디버깅 로그
-            print("입력된 패스워드:", password)
-            print("DB에 저장된 패스워드:", user.password)
-            print("check_password 결과:", check_password(password, user.password))
+            # print("입력된 패스워드:", password)
+            # print("DB에 저장된 패스워드:", user.password)
+            # print("check_password 결과:", check_password(password, user.password))
 
         if check_password(password, user.password):
             request.session['user_id'] = user.user_id
