@@ -9,19 +9,15 @@ User = get_user_model()
 
 
 def review_create(request):
-    user_nickname = ''
-    if request.user.is_authenticated:
-        try:
-            user = User.objects.get(pk=request.user.pk)
-            user_nickname = user.nickname
-        except User.DoesNotExist:
-            user_nickname = 'Unknown'
+    if not request.user.is_authenticated:
+        return redirect('log_001')
 
+    user_nickname = request.user.nickname
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
             review = form.save(commit=False)
-            review.user = User.objects.first()  ##임의로 로그인 전 유저 넣기 위한 코드 나중에 삭제!!
+            review.user = request.user
             review.save()
             return redirect('review_list') 
     else:
