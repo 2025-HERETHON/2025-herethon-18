@@ -114,16 +114,26 @@
                 <!-- 메인 두번째 줄 -->
                 <div class="main2">
                     <!-- 복지 인기 순위 -->
-                    <div class="popular-box-wrapper">
+                    <div class="popular-box-wrapper" data-age="노인">
                         <div class="popular-title">
                             <img src="{% static 'assets/image/fire.svg' %}" alt="불꽃 아이콘">
                             <div><strong>노인</strong>에게 관심이 많은 복지는?</div>
                         </div>
 
                         <ul class="popular-list">
-                            <!-- js로 동적 생성 -->
+                            {% for policy in popular_policies %}
+                                <li data-likes="{{ policy.like_count }}">
+                                    <span class="pop-rank">{{ forloop.counter|stringformat:"02d" }}</span>
+                                    <span class="pop-desc">{{ policy.policy_name }}</span>
+                                    <span class="pop-like-number">
+                                        <img src="{% static 'assets/img/heart.png' %}" alt="하트"> {{ policy.like_count }}
+                                    </span>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
+                </div>
+
 
                     <!-- 생생한 후기 확인하기 -->
                     <!-- 후기 전체 박스 -->

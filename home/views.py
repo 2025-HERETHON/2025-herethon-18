@@ -4,19 +4,38 @@ from review.models import Review
 from login.models import User  # 홈 헤더에 연령대 표시
 
 def home(request):
-    return render(request, 'home/main_002.html')
+    # 좋아요 많은 순으로 정책 5개 가져오기
+    popular_policies = Policy.objects.order_by('-like_count')[:5]
+    return render(request, 'home/main_002.html', {
+        'popular_policies': popular_policies
+    })
 
 def home_infant(request):
-    return render(request, 'home/main_infant.html')
+    popular_policies = Policy.objects.filter(age_group='영유아').order_by('-like_count')[:5]
+    return render(request, 'home/main_infant.html', {
+        'popular_policies': popular_policies
+    })
 
 def home_teen(request):
-    return render(request, 'home/main_teen.html')
+    popular_policies = Policy.objects.filter(age_group='청소년').order_by('-like_count')[:5]
+    return render(request, 'home/main_teen.html', {
+        'popular_policies': popular_policies
+    })
 
 def home_youth(request):
-    return render(request, 'home/main_youth.html')
+    popular_policies = Policy.objects.filter(age_group='대학생·청년').order_by('-like_count')[:5]
+    return render(request, 'home/main_youth.html', {
+        'popular_policies': popular_policies
+    })
 
 def home_middle(request):
-    return render(request, 'home/main_middle.html')
+    popular_policies = Policy.objects.filter(age_group='중장년').order_by('-like_count')[:5]
+    return render(request, 'home/main_middle.html', {
+        'popular_policies': popular_policies
+    })
 
 def home_elder(request):
-    return render(request, 'home/main_elder.html')
+    popular_policies = Policy.objects.filter(age_group='노인').order_by('-like_count')[:5]
+    return render(request, 'home/main_elder.html', {
+        'popular_policies': popular_policies
+    })

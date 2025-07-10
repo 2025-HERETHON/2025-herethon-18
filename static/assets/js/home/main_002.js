@@ -11,8 +11,21 @@ document.querySelector(".review-btn")?.addEventListener("click", function () {
 // 파란 박스 클릭 시, list_001 화면으로 이동
 document
   .querySelector(".popular-box-wrapper")
-  ?.addEventListener("click", function () {
-    window.location.href = "/policyList/list_001.html";
+  ?.addEventListener("click", function (e) {
+    const ageGroup = e.currentTarget.dataset.age;
+    if (ageGroup === "전연령") {
+      window.location.href = "/policyList/list_001.html";
+    } else if (ageGroup === "청소년") {
+      window.location.href = "/policyList/list_teen.html";
+    } else if (ageGroup === "영유아") {
+      window.location.href = "/policyList/list_infant.html";
+    } else if (ageGroup === "중장년") {
+      window.location.href = "/policyList/list_middle.html";
+    } else if (ageGroup === "대학생·청년") {
+      window.location.href = "/policyList/list_youth.html";
+    } else if (ageGroup === "노인") {
+      window.location.href = "/policyList/list_elder.html";
+    }
   });
 
 // '생생한 후기 확인하기' 박스 하단 더보기 버튼 클릭 시, rev_001로 이동
@@ -42,65 +55,6 @@ document.querySelectorAll(".graph-item").forEach((item) => {
       window.location.href = agePages[ageKey];
     }
   });
-});
-
-// 전연령 관심 복지 리스트 조회 (더미 데이터)
-const policies = [
-  {
-    policy_id: 3,
-    policy_name: "육아휴직 급여 지원",
-    like_count: 124,
-  },
-  {
-    policy_id: 5,
-    policy_name: "아이돌봄서비스",
-    like_count: 97,
-  },
-  {
-    policy_id: 8,
-    policy_name: "여성청소년 생리용품 바우처 지원",
-    like_count: 80,
-  },
-  {
-    policy_id: 7,
-    policy_name: "여성새로일하기센터 운영",
-    like_count: 12,
-  },
-  {
-    policy_id: 9,
-    policy_name: "온라인 여성경력개발센터(꿈날개) 운영",
-    like_count: 9,
-  },
-];
-
-document.addEventListener("DOMContentLoaded", function () {
-  const policyList = document.querySelector(".popular-list");
-
-  policies
-    // 좋아요 수 높은 순서대로 정렬
-    .sort((a, b) => b.like_count - a.like_count)
-    // 정렬된 항목 중 상위 5개 선택 -> 5개 정책만 화면에 표시
-    .slice(0, 5)
-
-    // 각 정책 정보 <li> 생성해서 .popular-list에 추가
-    .forEach((policy, index) => {
-      const li = document.createElement("li");
-      // 좋아요 수를 data 속성으로 설정
-      li.setAttribute("data-likes", policies.like_count);
-      li.innerHTML = `
-                <span class="pop-rank">${String(index + 1).padStart(
-                  2,
-                  "0"
-                )}</span>
-                <span class="pop-desc">${policy.policy_name}</span>
-                <span class="pop-like-number"><img src="{% static 'assets/img/heart.png' %}">${
-                  policy.like_count
-                }</span>
-            `;
-
-      // 완성된 li 요소를 ul인 .popular-list에 추가
-      policyList.appendChild(li);
-    });
 });
 
 // 후기 요약 카드 조회 (생생한 후기 확인하기) 더미 데이터 이용
