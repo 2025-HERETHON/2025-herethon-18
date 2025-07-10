@@ -27,6 +27,7 @@ def login(request):
             return render(request, 'login/log_001.html')
 
     return render(request, 'login/log_001.html')
+
 # 회원가입 1 페이지
 def setting_1(request):
     if request.method == "POST":

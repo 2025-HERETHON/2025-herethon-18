@@ -1,0 +1,306 @@
+/* 로그인 후 헤더 */
+.header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+    height: 120px;
+    padding: 6px 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header {
+    /* 헤더 왼쪽 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+.logo {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.header-age-label {
+    color: #595959;
+    font-family: Pretendard;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 65px;
+}
+
+.btns button {
+    color: #656565;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.256px;
+}
+
+.mypage-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* main - 사용자 정보 */
+.user_info {
+    max-width: 1320px;
+    margin: 100px auto 0;
+}
+
+.info_section01 {
+    display: flex;
+}
+
+.user_info h2 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.user_info p {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.user_name_fix {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.info_card {
+    border: 1px solid #D8D8D8;
+    width: 100%;
+    height: 298px;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+.edit_btn {
+    width: 159px;
+    height: 56px;
+    border-radius: 50px;
+    border: 1px solid #ECECEC;
+    background-color: #ECECEC;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 930px;
+    cursor: pointer;
+}
+
+.edit_btn img {
+    width: 26px;
+    height: 26px;
+}
+
+.info_row {
+    display: inline-block;
+    width: 23%;
+    margin-bottom: 12px;
+    vertical-align: top;
+    margin-top: 50px;
+}
+
+.label {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    color: #999999;
+    margin-bottom: 10px;
+}
+
+.value {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* 활동 내역 */
+.user_activity {
+    max-width: 1320px;
+    margin: 150px auto 0;
+}
+
+.user_activity h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.activity_box {
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    width: 100%;
+    height: 262px;
+    margin-top: 30px;
+}
+
+.activity_box img {
+    width: 41px;
+    height: 41px;
+    margin-left: 40px;
+}
+
+.activity_box span {
+    font-size: 32px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.activity_item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 131px;
+}
+
+/* 후기 섹션 */
+.review_section {
+    max-width: 1320px;
+    margin: 150px auto 0;
+}
+
+.review_section h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.no_review {
+    width: 100%;
+    height: 129px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 50px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #999;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.review_list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.review_item {
+    height: 199px;
+    border-bottom: 1px solid #D8D8D8;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.review_item:last-child {
+    border-bottom: none;
+}
+
+.review_top {
+    font-size: 22px;
+    font-weight: 500;
+    color: #999;
+    margin-left: 50px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.review_text {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.review_menu_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: url('/static/assets/img/plus_btn.png') no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+.review_menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 120px;
+    padding: 5px 10px;
+    background: #fff;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 10;
+}
+
+.review_menu li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+}
+
+.review_menu li img {
+    width: 20px;
+    height: 20px;
+}
+
+.review_menu li.delete {
+    color: red;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 30px auto 0;
+    max-width: 1320px;
+}
+
+.pagination button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #999;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    color: #000;
+}
