@@ -22,6 +22,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', include('login.urls')), # 차후 기본 url로 수정 필요 !!
+    path('login/', include('login.urls')),
+    path('home/', include('home.urls')),
     path('policyList/', include('policyList.urls')),
     path('review/', include('review.urls')),
 ]
