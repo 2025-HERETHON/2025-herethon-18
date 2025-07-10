@@ -12,8 +12,17 @@ def policy_list_middle(request):
     paginator = Paginator(policies, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'policyList/list_middle.html', {'page_obj': page_obj, 'policies': page_obj.object_list })
 
+    user_nickname = ''
+    if request.user.is_authenticated:
+        user_nickname = getattr(request.user, 'nickname', 'Unknown')
+
+    context = {
+        'page_obj': page_obj,
+        'policies': page_obj.object_list,
+        'user_nickname': user_nickname,
+    }
+    return render(request, 'policyList/list_middle.html', context)
 
 # 영유아
 def policy_list_infant(request):
@@ -21,7 +30,17 @@ def policy_list_infant(request):
     paginator = Paginator(policies, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'policyList/list_infant.html', {'page_obj': page_obj, 'policies': page_obj.object_list })
+
+    user_nickname = ''
+    if request.user.is_authenticated:
+        user_nickname = getattr(request.user, 'nickname', 'Unknown')
+
+    context = {
+        'page_obj': page_obj,
+        'policies': page_obj.object_list,
+        'user_nickname': user_nickname,
+    }
+    return render(request, 'policyList/list_infant.html', context)
 
 # 청소년
 def policy_list_teen(request):
@@ -29,7 +48,17 @@ def policy_list_teen(request):
     paginator = Paginator(policies, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'policyList/list_teen.html', {'page_obj': page_obj, 'policies': page_obj.object_list })
+
+    user_nickname = ''
+    if request.user.is_authenticated:
+        user_nickname = getattr(request.user, 'nickname', 'Unknown')
+
+    context = {
+        'page_obj': page_obj,
+        'policies': page_obj.object_list,
+        'user_nickname': user_nickname,
+    }
+    return render(request, 'policyList/list_teen.html', context)
 
 # 대학생·청년
 def policy_list_youth(request):
@@ -37,7 +66,17 @@ def policy_list_youth(request):
     paginator = Paginator(policies, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'policyList/list_youth.html', {'page_obj': page_obj, 'policies': page_obj.object_list })
+
+    user_nickname = ''
+    if request.user.is_authenticated:
+        user_nickname = getattr(request.user, 'nickname', 'Unknown')
+
+    context = {
+        'page_obj': page_obj,
+        'policies': page_obj.object_list,
+        'user_nickname': user_nickname,
+    }
+    return render(request, 'policyList/list_youth.html', context)
 
 # 노인
 def policy_list_elder(request):
@@ -45,12 +84,31 @@ def policy_list_elder(request):
     paginator = Paginator(policies, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'policyList/list_elder.html', {'page_obj': page_obj, 'policies': page_obj.object_list })
+
+    user_nickname = ''
+    if request.user.is_authenticated:
+        user_nickname = getattr(request.user, 'nickname', 'Unknown')
+
+    context = {
+        'page_obj': page_obj,
+        'policies': page_obj.object_list,
+        'user_nickname': user_nickname,
+    }
+    return render(request, 'policyList/list_elder.html', context)
 
 def policy_list_all(request):
     policies = Policy.objects.filter(age_group='전연령').order_by('-like_count')
     paginator = Paginator(policies, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'policyList/list_001.html', {'page_obj': page_obj, 'policies': page_obj.object_list })
 
+    user_nickname = ''
+    if request.user.is_authenticated:
+        user_nickname = getattr(request.user, 'nickname', 'Unknown')
+
+    context = {
+        'page_obj': page_obj,
+        'policies': page_obj.object_list,
+        'user_nickname': user_nickname,
+    }
+    return render(request, 'policyList/list_001.html', context)

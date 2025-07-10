@@ -36,7 +36,7 @@
                         <button class="com-btn">커뮤니티</button>
                         <button class="mypage-btn">
                             <img src="/static/assets/img/dag.png">
-                            <span id="user-nickname"></span>
+                            <span id="user-nickname">{{ user_nickname }}</span>
                         </button>
                     </div>
                 </div>
@@ -125,9 +125,7 @@
             <small>ⓒ 2025 AAA. All rights reserved.</small>
         </div>
     </footer>
-    </div>
-    <script src="{% static 'assets/js/list.js' %}"></script>
 </body>
-
+    <script src="{% static 'assets/js/list.js' %}"></script>
 
 </html>
