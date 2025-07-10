@@ -36,11 +36,13 @@ def home_infant(request):
         except User.DoesNotExist:
             user_nickname = 'Unknown'
 
-    return render(request, 'home/main_infant.html', {
+    context = {
         'popular_policies': popular_policies,
         'review_cards': review_cards,
         'user_nickname': user_nickname,
-    })
+    }
+
+    return render(request, 'home/main_infant.html', context)
 
 
 def home_teen(request):
@@ -55,11 +57,13 @@ def home_teen(request):
         except User.DoesNotExist:
             user_nickname = 'Unknown'
 
-    return render(request, 'home/main_teen.html', {
+    context = {
         'popular_policies': popular_policies,
         'review_cards': review_cards,
         'user_nickname': user_nickname,
-    })
+    }
+
+    return render(request, 'home/main_teen.html', context)
 
 
 def home_youth(request):
@@ -74,11 +78,13 @@ def home_youth(request):
         except User.DoesNotExist:
             user_nickname = 'Unknown'
 
-    return render(request, 'home/main_youth.html', {
+    context = {
         'popular_policies': popular_policies,
         'review_cards': review_cards,
         'user_nickname': user_nickname,
-    })
+    }
+
+    return render(request, 'home/main_youth.html', context)
 
 
 def home_middle(request):
@@ -93,11 +99,13 @@ def home_middle(request):
         except User.DoesNotExist:
             user_nickname = 'Unknown'
 
-    return render(request, 'home/main_middle.html', {
+    context = {
         'popular_policies': popular_policies,
         'review_cards': review_cards,
         'user_nickname': user_nickname,
-    })
+    }
+
+    return render(request, 'home/main_middle.html', context)
 
 
 def home_elder(request):
@@ -112,8 +120,10 @@ def home_elder(request):
         except User.DoesNotExist:
             user_nickname = 'Unknown'
 
-    return render(request, 'home/main_elder.html', {
+    context = {
         'popular_policies': popular_policies,
         'review_cards': review_cards,
         'user_nickname': user_nickname,
-    })
+    }
+
+    return render(request, 'home/main_elder.html', context)

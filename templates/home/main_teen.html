@@ -21,6 +21,7 @@
                 <div class="header-inner">
                     <!-- 왼쪽 로고 + 연령 -->
                     <div class="left-header">
+                        <img src="{% static 'assets/image/logo.svg' %}" />
                         <span class="logo"><strong>Elevate:Seoul</strong></span>
                         <span class="header-age-label">청소년</span>
                     </div>
@@ -33,7 +34,7 @@
                             <button class="com-btn">커뮤니티</button>
                             <button class="mypage-btn">
                                 <img src="{% static 'assets/image/dog.png' %}">
-                                <span id="user-nickname"></span>
+                                <span id="user-nickname">{{ user_nickname }}</span>
                             </button>
                         </div>
                 </div>
