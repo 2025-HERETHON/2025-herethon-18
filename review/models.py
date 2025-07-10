@@ -8,7 +8,7 @@ User = get_user_model()
 
 class Review(models.Model):
     review_id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+    user = models.ForeignKey('login.User', to_field='user_id', on_delete=models.CASCADE) 
     title = models.CharField(max_length=100, default='제목 없음')
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
