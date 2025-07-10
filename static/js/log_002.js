@@ -1,7 +1,3 @@
-// 헤더 상단 제목 클릭 시, main_002 화면으로 이동 
-document.querySelector('.logo')?.addEventListener('click', function () {
-    window.location.href = 'main_002.html'
-});
 
 // 전체 동의
 document.getElementById('checkAll').addEventListener('change', function () {

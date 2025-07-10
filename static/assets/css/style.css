@@ -45,17 +45,6 @@
   line-height: normal;
 }
 
-.footer_logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.footer_logo img {
-  width: 32px;
-  height: 32px;
-}
-
 .footer_bottom {
   display: flex;
   flex-direction: column;
