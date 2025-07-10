@@ -3,10 +3,9 @@ document.querySelector('.logo')?.addEventListener('click', function () {
     window.location.href = 'main_002.html'
 });
 
-// mypage 만들어졌을 경우 사용
-// 헤더 상단 닉네임 클릭 시, mypage(myp_001)로 이동
-document.querySelector('.mypage-btn')?.addEventListener('click', function () {
-    window.location.href = 'myp_001.html'
+// 상단 헤더 후기 버튼 클릭 시, rev_001로 이동
+document.querySelector(".review-btn")?.addEventListener("click", function () {
+    window.location.href = "/review/list/";
 });
 
 // 헤더 유저 닉네임으로 바뀌기 (더미데이터 사용)
