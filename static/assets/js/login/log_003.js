@@ -1,7 +1,7 @@
 // 헤더 상단 제목 클릭 시, main_002 화면으로 이동
-document.querySelector(".logo")?.addEventListener("click", function () {
-  window.location.href = "/home/";
-});
+// document.querySelector(".logo")?.addEventListener("click", function () {
+  // window.location.href = "/home/";
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
   const ageButtons = document.querySelectorAll(".age_btn");
