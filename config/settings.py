@@ -76,6 +76,9 @@ DATABASES = {
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT', '3306'),
+        'OPTIONS': {
+            'auth_plugin': config('MYSQL_AUTH_PLUGIN', default='caching_sha2_password'),
+        },
     }
 }
 
