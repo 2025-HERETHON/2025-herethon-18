@@ -1,26 +1,26 @@
 // 헤더 상단 제목 클릭 시, main_002 화면으로 이동
-document.querySelector('.logo')?.addEventListener('click', function () {
-    window.location.href = 'main_002.html'
+document.querySelector(".logo")?.addEventListener("click", function () {
+  window.location.href = "/home/";
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const ageButtons = document.querySelectorAll('.age_btn');
+document.addEventListener("DOMContentLoaded", () => {
+  const ageButtons = document.querySelectorAll(".age_btn");
   let selectedAge = "";
 
-  ageButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      ageButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+  ageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      ageButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
       selectedAge = button.textContent;
     });
   });
 
-  document.getElementById('submitBtn').addEventListener('click', (e) => {
+  document.getElementById("submitBtn").addEventListener("click", (e) => {
     e.preventDefault(); // 폼 기본 제출 막기 (JS 유효성검사 후 수동 제출)
 
-    const nickname = document.querySelectorAll('.input_box')[0].value.trim();
-    const birth = document.querySelectorAll('.input_box')[1].value.trim();
-    const phone = document.querySelectorAll('.input_box')[2].value.trim();
+    const nickname = document.querySelectorAll(".input_box")[0].value.trim();
+    const birth = document.querySelectorAll(".input_box")[1].value.trim();
+    const phone = document.querySelectorAll(".input_box")[2].value.trim();
 
     if (nickname.length < 3) {
       alert("닉네임은 3자리 이상 입력해주세요.");
@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    document.getElementById('selectedAge').value = selectedAge.trim();
+    document.getElementById("selectedAge").value = selectedAge.trim();
 
     // 유효성 통과 → form submit
-    document.getElementById('profileForm').submit();
+    document.getElementById("profileForm").submit();
   });
 });
