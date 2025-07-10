@@ -13,7 +13,7 @@ document.getElementById("write-cancel-btn")?.addEventListener("click", () => {
 });
 
 // 헤더 유저 닉네임으로 바뀌기 (더미데이터 사용)
-const dummyLoginResponse = {
+/*const dummyLoginResponse = {
   accessToken: "eyJhbGciOiJIUzI1NiIs...",
   refreshToken: "eyJhbGciOiJIUzI1NiIs...",
   user: {
@@ -21,7 +21,8 @@ const dummyLoginResponse = {
     nickname: "강아지가짱",
     ageRange: "대학생·청년",
   },
-};
+};*/
+
 // localStorage에 저장 (세션 유지용)
 localStorage.setItem("user", JSON.stringify(dummyLoginResponse.user));
 

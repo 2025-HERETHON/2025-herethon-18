@@ -27,6 +27,8 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('policyList/', include('policyList.urls')),
     path('review/', include('review.urls')),
+    path('mypage/', include('mypage.urls')),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
