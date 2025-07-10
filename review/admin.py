@@ -5,10 +5,10 @@ from .models import Review, Like
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('review_id', 'user', 'policy', 'created_at')
-    search_fields = ('user__nickname', 'policy__policy_name', 'content')
+    list_display = ('review_id', 'user',  'created_at')
+    search_fields = ('user__nickname','content')
 
 @admin.register(Like)
 class ReviewLikeAdmin(admin.ModelAdmin):
-    list_display = ('like_id', 'user', 'policy', 'created_at')
-    search_fields = ('user__nickname', 'policy__policy_name')
+    list_display = ('like_id', 'user', 'created_at')
+    search_fields = ('user__nickname',)

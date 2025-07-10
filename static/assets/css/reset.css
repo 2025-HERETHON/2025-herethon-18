@@ -6,17 +6,19 @@
 }
 
 /* 기본 구조 설정 */
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 /* 리스트, 링크, 버튼 초기화 */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 

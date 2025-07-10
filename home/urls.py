@@ -9,4 +9,8 @@ urlpatterns = [
     path('youth/', views.home_youth, name='home_youth'),
     path('elder/', views.home_elder, name='home_elder'),
 
+<<<<<<< HEAD
 ]
+=======
+]
+>>>>>>> BE_feat/list
