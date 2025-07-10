@@ -1,3 +1,7 @@
+// 헤더 상단 제목 클릭 시, main_002 화면으로 이동
+document.addEventListener('DOMContentLoaded', () => {
+  const loginButton = document.querySelector('.login_btn_submit');
+
 // 전체 동의
 document.getElementById('checkAll').addEventListener('change', function () {
     const isChecked = this.checked;
