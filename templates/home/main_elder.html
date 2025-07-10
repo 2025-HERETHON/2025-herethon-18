@@ -136,22 +136,20 @@
 
 
                     <!-- 생생한 후기 확인하기 -->
-                    <!-- 후기 전체 박스 -->
                     <div class="rev-box-wrapper">
-                        <div class="rev-top"> <!-- 상단 타이틀 -->
-                            <img src="{% static 'assets/image/fish.svg' %}" alt="fish">
-                            <span>생생한 <strong>후기</strong> 확인하기</span>
+                        <div class="rev-top">
+                        <img src="{% static 'assets/image/fish.svg' %}" alt="fish">
+                        <span>생생한 <strong>후기</strong> 확인하기</span>
                         </div>
-                        <div class="rev-bottom"> <!-- 후기 내용들 -->
-                            <!-- js로 동적 생성 -->
-                        </div>
-                        <div> <!-- 더보기 버튼 -->
-                            <button class="rev-more">더보기 &gt;</button>
+                        <div class="rev-bottom">
+                        {% for review in review_cards %}
+                            <div class="rev">
+                            <div class="rev-title">{{ review.title }}</div>
+                            <div class="rev-con">{{ review.summary }}</div>
+                            </div>
+                        {% endfor %}
                         </div>
                     </div>
-                </div>
-
-            </main>
 
             <!-- 푸터 -->
             <footer class="footer_layout-inner">

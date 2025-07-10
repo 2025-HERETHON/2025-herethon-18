@@ -13,6 +13,10 @@ class Review(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    @property
+    def summary(self):
+        return self.content[:60] + "..." if len(self.content) > 60 else self.content
+
 
 class Like(models.Model):
     like_id = models.AutoField(primary_key=True)

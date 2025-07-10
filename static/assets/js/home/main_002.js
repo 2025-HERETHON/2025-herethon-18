@@ -57,38 +57,6 @@ document.querySelectorAll(".graph-item").forEach((item) => {
   });
 });
 
-// 후기 요약 카드 조회 (생생한 후기 확인하기) 더미 데이터 이용
-const reviews = [
-  {
-    policy_id: 3,
-    policy_name: "육아휴직 급여 지원",
-    summary:
-      "신청 방법이 이해를 잘 할 수 있도록 온라인으로 간편하게 신청 가능해서 너무 좋았어요. 주변의 젊은 육아부부들도...",
-  },
-  {
-    policy_id: 8,
-    policy_name: "여성새로일하기센터 운영",
-    summary:
-      "관련 대표님 및 직무연계 등에서 직접 체감할 수 있던 점이 좋았습니다. 전문적인 상담과 실업급여 활동을 들을 수...",
-  },
-];
-
-document.addEventListener("DOMContentLoaded", function () {
-  const reviewContainer = document.querySelector(".rev-bottom");
-
-  reviews.forEach((review) => {
-    const div = document.createElement("div");
-    div.classList.add("rev");
-
-    div.innerHTML = `
-            <div class="rev-title">${review.policy_name}</div>
-            <div class="rev-con">${review.summary}</div>
-        `;
-
-    reviewContainer.appendChild(div);
-  });
-});
-
 // 헤더 유저 닉네임으로 바뀌기 (더미데이터 사용)
 const dummyLoginResponse = {
   accessToken: "eyJhbGciOiJIUzI1NiIs...",
