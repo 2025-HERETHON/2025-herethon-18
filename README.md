@@ -24,7 +24,7 @@ Elevate:Seoul은 여성의 생애주기별 맞춤 복지 정보를 쉽고 빠르
 - 프론트엔드
     - 정지은: 로그인 페이지, 리스트 페이지, 커뮤니티 페이지, 메인 마이페이지
     
-    <img width="736" height="736" alt="image" src="https://github.com/user-attachments/assets/83000980-a5b3-4ceb-9814-880b01b9aad6" />
+    <img width="150" height="736" alt="image" src="https://github.com/user-attachments/assets/83000980-a5b3-4ceb-9814-880b01b9aad6" />
 
     
     - 최연서: 연령별 메인 페이지, 후기 페이지,  마이페이지 내부 활동 페이지
