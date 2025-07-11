@@ -68,11 +68,11 @@
                         <p class="board-category">{{ policy.department }}</p>
                     </div>
                     <div class="board_icons">
-                        <div class="icon_item like"  data-type="like">
+                        <div class="icon_item like"  data-type="like" data-post-id="{{ policy.policy_id }}" >
                             <img src="/static/assets/img/like_btn.png" alt="좋아요">
                             <span class="count">{{ policy.like_count }}</span>
                         </div>
-                        <div class="icon_item bookmark" data-type="bookmark">
+                        <div class="icon_item bookmark" data-type="bookmark" data-post-id="{{ policy.policy_id }}">
                             <img src="/static/assets/img/bookmark_icon.png" alt="북마크">
                             <span class="count">{{ policy.scrap_count }}</span>
                         </div>

@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from policyList.models import *
 from django.core.paginator import Paginator
+from django.views.decorators.http import require_POST
+from django.http import JsonResponse
+import json
 
 
 # Create your views here.
@@ -112,3 +115,56 @@ def policy_list_all(request):
         'user_nickname': user_nickname,
     }
     return render(request, 'policyList/list_001.html', context)
+
+
+@require_POST
+def toggle_like(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': '로그인이 필요합니다.'}, status=401)
+
+    try:
+        data = json.loads(request.body)
+        policy_id = data.get('postId')
+        action = data.get('action')  # "like" or "unlike"
+
+        policy = get_object_or_404(Policy, pk=policy_id)
+        like, created = Like.objects.get_or_create(user=request.user, policy=policy)
+
+        if action == 'like' and created:
+            policy.like_count += 1
+            policy.save()
+        elif action == 'unlike' and not created:
+            like.delete()
+            policy.like_count = max(0, policy.like_count - 1)
+            policy.save()
+
+        return JsonResponse({'like_count': policy.like_count})
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=400)
+    
+
+@require_POST
+def toggle_bookmark(request):
+        if not request.user.is_authenticated:
+            return JsonResponse({'error': '로그인이 필요합니다.'}, status=401)
+
+        try:
+            data = json.loads(request.body)
+            policy_id = data.get('postId')
+            action = data.get('action')
+
+            policy = get_object_or_404(Policy, pk=policy_id)
+            scrap, created = Scrap.objects.get_or_create(user=request.user, policy=policy)
+
+            if action == 'like' and created:
+                policy.scrap_count += 1
+                policy.save()
+            elif action == 'unlike' and not created:
+                scrap.delete()
+                policy.scrap_count = max(0, policy.scrap_count - 1)
+                policy.save()
+
+            return JsonResponse({'scrap_count': policy.scrap_count})
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=400)
+    
