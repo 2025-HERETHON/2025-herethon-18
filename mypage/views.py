@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from login.models import User
 from policyList.models import Policy, Like, Scrap
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 
@@ -31,6 +32,8 @@ def mypage_view(request):
         'user_nickname': user.nickname,
     }
     return render(request, 'mypage/mypage.html', context)
+
+
 @login_required
 def mypage_likeList(request):
     user = request.user
