@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/reset.css">
+    <link rel="stylesheet" href="/static/assets/css/section/com_003.css">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>마이페이지</title>
+</head>
+
+<body>
+    <div class="layout-outer">
+        <!-- 헤더 -->
+        <header class="header layout-inner">
+            <div class="header-inner">
+                <!-- 왼쪽 로고 + 연령 -->
+                <div class="left-header">
+                    <img class="logo" src="/static/assets/img/logo_header_real.png" alt="logo" />
+                    <span class="header-age-label">전연령</span>
+                </div>
+
+                <!-- 오른쪽 후기,멘토질문방,커뮤니티 버튼 -->
+                <div class="right-header">
+                    <div class="btns">
+                        <button class="review-btn">후기</button>
+                        <button class="qna-btn">멘토 질문방</button>
+                        <button class="com-btn">커뮤니티</button>
+                        <button class="mypage-btn">
+                            <img src="/static/assets/img/dag.png">
+                            <span id="user-nickname"></span>
+                        </button>
+                    </div>
+                </div>
+        </header>
+
+        <!-- 메인 -->
+        <main>
+            <form action="/reviews/" method="POST" class="write-form">
+                <!-- 제목 부분 -->
+                <div class="write-title">
+                    <h3>제목</h3>
+                    <input type="text" id="write-input" name="title" placeholder="복지 서비스를 입력하세요." />
+                    <img src="../assets/img/Vector 6.png" />
+                </div>
+
+                <!-- 글 작성 부분 -->
+                <div class="write-content">
+                    <h3>글 작성</h3>
+                    <textarea id="write-content" name="content" placeholder="후기를 작성해주세요!"></textarea>
+                </div>
+
+                <!-- 취소 버튼, 등록 버튼 -->
+                <div class="upload-yn">
+                    <button type="button" id="write-cancel-btn">취소</button>
+                    <button type="submit" id="write-upload-btn">등록하기</button>
+                </div>
+            </form>
+
+        </main>
+
+    </div>
+
+    <footer class="footer_layout-inner">
+        <div class="footer_top">
+            <div class="footer_logo">
+                <img src="/static/assets/img/logo_footer_real.png" alt="footer로고">
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <p>개인정보처리방침</p>
+            <small>ⓒ 2025 AAA. All rights reserved.</small>
+        </div>
+    </footer>
+    </div>
+</body>
+<script src="/static/js/com_003.js"></script>
+
+</html>

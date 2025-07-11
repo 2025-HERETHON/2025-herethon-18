@@ -17,3 +17,23 @@ document.querySelector('.mypage-btn')?.addEventListener('click', function () {
 document.querySelector('.com-btn')?.addEventListener('click', function () {
     window.location.href = 'com_001.html'
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 모든 삭제 버튼에 이벤트 바인딩
+    document.querySelectorAll(".del_com").forEach(button => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault(); // 기본 동작 차단 (폼일 경우 대비)
+            e.stopPropagation(); // 부모 이벤트 막기
+
+            // 확인창
+            const confirmDelete = confirm("정말 삭제하시겠습니까?");
+            if (!confirmDelete) return;
+
+            // 가장 가까운 카드(.rev-card) 삭제
+            const card = this.closest(".rev-card");
+            if (card) {
+                card.remove();
+            }
+        });
+    });
+});

@@ -126,6 +126,34 @@
     display: inline-block;
 }
 
+.badge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.del_com {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.del_com img {
+    width: 20px;
+    height: 20px;
+}
+
+.del_com span {
+    color: #FF0000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
 .review-title {
     margin-left: 30px;
     margin-top: 30px;

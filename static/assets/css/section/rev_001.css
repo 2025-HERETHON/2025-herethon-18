@@ -80,31 +80,6 @@
     font-weight: 400;
 }
 
-/* 검색창 */
-.search-container{
-    width: 1320px;
-    height: 69px;
-    border-radius: 5px;
-    border: 1px solid #D8D8D8;
-    background: #FFF;
-    margin: 0px 300px 60px 300px;
-}
-
-#search-input{
-    color: black;
-    font-family: Pretendard;
-    font-size: 24px;
-    font-weight: 400;
-    width: 1200px;
-    height: 67px;
-    border: none;
-    outline: none;
-    margin-left: 20px;
-}
-
-#search-input::placeholder{
-    color: #999;
-}
 
 /* 후기들 */
 .review-list{
