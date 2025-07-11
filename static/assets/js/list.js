@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //localStorage.setItem("user", JSON.stringify(dummyLoginResponse.user));
 
 document.addEventListener("DOMContentLoaded", () => {
-  const userData = JSON.parse(localStorage.getItem("user")); // 저장된 사용자 정보 불러오기
+  //const userData = JSON.parse(localStorage.getItem("user")); // 저장된 사용자 정보 불러오기
   const nicknameSpan = document.getElementById("user-nickname");
 
   if (userData && nicknameSpan) {
