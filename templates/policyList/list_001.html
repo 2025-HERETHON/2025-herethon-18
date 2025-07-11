@@ -68,16 +68,26 @@
                         <p class="board-category">{{ policy.department }}</p>
                     </div>
                     <div class="board_icons">
-                        <div class="icon_item like"  data-type="like" data-post-id="{{ policy.policy_id }}" >
-                            <img src="/static/assets/img/like_btn.png" alt="좋아요">
+                        <div class="icon_item like {% if policy.user_has_liked %}active{% endif %}"  
+                                data-type="like" data-post-id="{{ policy.policy_id }}">
+                            <img src="{% if policy.user_has_liked %}
+                                        /static/assets/img/full_heart_icon.png
+                                        {% else %}
+                                        /static/assets/img/like_btn.png
+                                        {% endif %}" alt="좋아요">
+
                             <span class="count">{{ policy.like_count }}</span>
                         </div>
-                        <div class="icon_item bookmark" data-type="bookmark" data-post-id="{{ policy.policy_id }}">
-                            <img src="/static/assets/img/bookmark_icon.png" alt="북마크">
+                        <div class="icon_item bookmark {% if policy.user_has_bookmarked %}active{% endif %}"
+                        data-type="bookmark" data-post-id="{{ policy.policy_id }}">
+                     <img src="{% if policy.user_has_bookmarked %}
+                                 /static/assets/img/full_bookmark_icon.png
+                               {% else %}
+                                 /static/assets/img/bookmark_icon.png
+                               {% endif %}" alt="북마크">
                             <span class="count">{{ policy.scrap_count }}</span>
                         </div>
                     </div>
-                </li>
                 {% empty %}
                 <li><p>정책이 없습니다.</p></li>
                 {% endfor %}
