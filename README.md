@@ -42,12 +42,17 @@ Elevate:Seoul은 여성의 생애주기별 맞춤 복지 정보를 쉽고 빠르
 
 
 ## 기능 구현 - 회원가입 및 로그인
-로그인 화면
+### 로그인 화면
 <img width="1716" height="1192" alt="image" src="https://github.com/user-attachments/assets/fc53c93e-ab47-429a-854e-cb18fc628c3c" />
 
-회원가입 화면
+### 회원가입 1단계
 
 <img width="1722" height="1305" alt="image" src="https://github.com/user-attachments/assets/403d3132-5561-4443-844c-b959e2c32a5e" />
+
+### 회원가입 2단계
+
+<img width="1717" height="1203" alt="image" src="https://github.com/user-attachments/assets/5b8a23e3-1316-4f3a-9d18-64878ee7f4a5" />
+
 
 ## 폴더 구조
 
