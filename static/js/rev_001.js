@@ -13,6 +13,11 @@ document.querySelector('.mypage-btn')?.addEventListener('click', function(){
     window.location.href='myp_001.html'
 });
 
+// 상단 헤더 커뮤니티 버튼 클릭 시, com_001로 이동
+document.querySelector('.com-btn')?.addEventListener('click', function () {
+    window.location.href='com_001.html'
+});
+
 // 페이지 완전히 로드된 후 실행 
 document.addEventListener("DOMContentLoaded", function(){
     const reviewListEl = document.getElementById("review-list");

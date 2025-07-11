@@ -5,23 +5,28 @@ document.querySelector('.logo')?.addEventListener('click', function () {
 
 // 상단 헤더 후기 버튼 클릭 시, rev_001로 이동
 document.querySelector('.review-btn')?.addEventListener('click', function () {
-    window.location.href='rev_001.html'
+    window.location.href = 'rev_001.html'
+});
+
+// 상단 헤더 커뮤니티 버튼 클릭 시, com_001로 이동
+document.querySelector('.com-btn')?.addEventListener('click', function () {
+    window.location.href = 'com_001.html'
 });
 
 // 파란 박스 클릭 시, list_001 화면으로 이동
-document.querySelector('.popular-box-wrapper')?.addEventListener('click', function (){
-    window.location.href='list_001.html'
+document.querySelector('.popular-box-wrapper')?.addEventListener('click', function () {
+    window.location.href = 'list_001.html'
 });
 
 // '생생한 후기 확인하기' 박스 하단 더보기 버튼 클릭 시, rev_001로 이동
-document.querySelector('.rev-more')?.addEventListener('click', function() {
-    window.location.href='rev_001.html'
+document.querySelector('.rev-more')?.addEventListener('click', function () {
+    window.location.href = 'rev_001.html'
 });
 
 // mypage 만들어졌을 경우 사용
 // 헤더 상단 닉네임 클릭 시, mypage(myp_001)로 이동
-document.querySelector('.mypage-btn')?.addEventListener('click', function(){
-    window.location.href='myp_001.html'
+document.querySelector('.mypage-btn')?.addEventListener('click', function () {
+    window.location.href = 'myp_001.html'
 });
 
 
@@ -36,9 +41,9 @@ const agePages = {
 
 document.querySelectorAll('.graph-item').forEach(item => {
     item.addEventListener('click', () => {
-        const ageKey = item.dataset.age; 
+        const ageKey = item.dataset.age;
         if (agePages[ageKey]) {
-        window.location.href = agePages[ageKey];
+            window.location.href = agePages[ageKey];
         }
     });
 });
@@ -73,14 +78,14 @@ const policies = [
     },
 ];
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     const policyList = document.querySelector(".popular-list");
 
     policies
         // 좋아요 수 높은 순서대로 정렬 
-        .sort((a,b) => b.like_count - a.like_count)
+        .sort((a, b) => b.like_count - a.like_count)
         // 정렬된 항목 중 상위 5개 선택 -> 5개 정책만 화면에 표시
-        .slice(0,5)
+        .slice(0, 5)
 
         // 각 정책 정보 <li> 생성해서 .popular-list에 추가
         .forEach((policy, index) => {
@@ -88,11 +93,11 @@ document.addEventListener("DOMContentLoaded", function(){
             // 좋아요 수를 data 속성으로 설정
             li.setAttribute("data-likes", policies.like_count)
             li.innerHTML = `
-                <span class="pop-rank">${String(index+1).padStart(2, "0")}</span>
+                <span class="pop-rank">${String(index + 1).padStart(2, "0")}</span>
                 <span class="pop-desc">${policy.policy_name}</span>
                 <span class="pop-like-number"><img src="../assets/img/heart.png">${policy.like_count}</span>
             `
-            
+
             // 완성된 li 요소를 ul인 .popular-list에 추가
             policyList.appendChild(li);
         })
@@ -115,7 +120,7 @@ const reviews = [
 
 document.addEventListener("DOMContentLoaded", function () {
     const reviewContainer = document.querySelector(".rev-bottom");
-    
+
     reviews.forEach(review => {
         const div = document.createElement("div");
         div.classList.add("rev");

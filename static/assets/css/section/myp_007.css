@@ -60,8 +60,8 @@
 }
 
 /* main 부분 */
-/* 제목: 좋아요 목록 */
-.like_page_title {
+/* 제목: 스크랩 목록 */
+.scrap_page_title {
     color: #000;
     font-family: Pretendard;
     font-size: 40px;

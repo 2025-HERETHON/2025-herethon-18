@@ -161,31 +161,6 @@
     justify-content: space-between;
 }
 
-.com_write-btn {
-    width: 200px;
-    height: 91px;
-    border-radius: 50px;
-    border: 1px solid #D8D8D8;
-    background: #ECECEC;
-    margin: 60px 860px 100px 860px;
-}
-
-.com_write-btn>div {
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    padding: 30px;
-    gap: 8px;
-}
-
-.com_write-btn>div>span {
-    color: #000;
-    font-family: Pretendard;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 30.8px;
-}
-
 /* 페이지네이션 버튼 */
 .rev-page {
     display: flex;
