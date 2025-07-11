@@ -5,9 +5,21 @@ from django.core.paginator import Paginator
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from policyList.models import Policy  # 북마크 대상
 
 
 # Create your views here.
+def policy_list(request):
+    user = request.user
+    policies = Policy.objects.all()
+
+    for policy in policies:
+        policy.user_has_liked = Like.objects.filter(user=user, policy=policy).exists()
+        policy.user_has_bookmarked = Scrap.objects.filter(user=user, policy=policy).exists()
+
+    return render(request, "your_template.html", {"policies": policies})
 
 def policy_list_middle(request):
     # 정렬 기준으로 정책 가져오기
@@ -117,54 +129,65 @@ def policy_list_all(request):
     return render(request, 'policyList/list_001.html', context)
 
 
-@require_POST
+@csrf_exempt
 def toggle_like(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({'error': '로그인이 필요합니다.'}, status=401)
-
-    try:
+    if request.method == "POST":
         data = json.loads(request.body)
-        policy_id = data.get('postId')
-        action = data.get('action')  # "like" or "unlike"
-
-        policy = get_object_or_404(Policy, pk=policy_id)
-        like, created = Like.objects.get_or_create(user=request.user, policy=policy)
-
-        if action == 'like' and created:
-            policy.like_count += 1
-            policy.save()
-        elif action == 'unlike' and not created:
-            like.delete()
-            policy.like_count = max(0, policy.like_count - 1)
-            policy.save()
-
-        return JsonResponse({'like_count': policy.like_count})
-    except Exception as e:
-        return JsonResponse({'error': str(e)}, status=400)
-    
-
-@require_POST
-def toggle_bookmark(request):
-        if not request.user.is_authenticated:
-            return JsonResponse({'error': '로그인이 필요합니다.'}, status=401)
+        post_id = data.get("postId")
+        user = request.user
 
         try:
-            data = json.loads(request.body)
-            policy_id = data.get('postId')
-            action = data.get('action')
+            policy = Policy.objects.get(pk=post_id)
+            like, created = Like.objects.get_or_create(user=user, policy=policy)
 
-            policy = get_object_or_404(Policy, pk=policy_id)
-            scrap, created = Scrap.objects.get_or_create(user=request.user, policy=policy)
+            if created:
+                policy.like_count += 1
+                status = "liked"
+            else:
+                like.delete()
+                policy.like_count = max(0, policy.like_count - 1)
+                status = "unliked"
 
-            if action == 'like' and created:
+            policy.save()
+            return JsonResponse({
+                "status": "ok",
+                "like_status": status,
+                "like_count": policy.like_count
+            })
+
+        except Policy.DoesNotExist:
+            return JsonResponse({"status": "error", "message": "정책 없음"}, status=404)
+
+    return JsonResponse({"status": "error", "message": "POST만 허용됨"}, status=405)
+
+
+@csrf_exempt
+def toggle_bookmark(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        post_id = data.get("postId")
+        user = request.user
+
+        try:
+            policy = Policy.objects.get(pk=post_id)
+            scrap, created = Scrap.objects.get_or_create(user=user, policy=policy)
+
+            if created:
                 policy.scrap_count += 1
-                policy.save()
-            elif action == 'unlike' and not created:
+                status = "bookmarked"
+            else:
                 scrap.delete()
                 policy.scrap_count = max(0, policy.scrap_count - 1)
-                policy.save()
+                status = "unbookmarked"
 
-            return JsonResponse({'scrap_count': policy.scrap_count})
-        except Exception as e:
-            return JsonResponse({'error': str(e)}, status=400)
-    
+            policy.save()
+            return JsonResponse({
+                "status": "ok",
+                "bookmark_status": status,
+                "scrap_count": policy.scrap_count
+            })
+
+        except Policy.DoesNotExist:
+            return JsonResponse({"status": "error", "message": "정책 없음"}, status=404)
+
+    return JsonResponse({"status": "error", "message": "POST만 허용됨"}, status=405)

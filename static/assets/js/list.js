@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 좋아요, 북마크 +1 & 이미지 교체
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".icon_item").forEach((icon) => {
     console.log("아이콘 이벤트 바인딩 중");
     icon.addEventListener("click", function () {
@@ -123,10 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
       img.src = newSrc + "?v=" + new Date().getTime();
     });
   });
-});
+});*/
 
 // 좋아요 / 북마크 클릭 시 POST + 상태 반영
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".icon_item").forEach((icon) => {
     icon.addEventListener("click", async function (e) {
       e.stopPropagation();
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let count = parseInt(countSpan.textContent, 10);
 
       // 요청 보낼 URL
-      const endpoint = type === "like" ? "/api/like/" : "/api/bookmark/";
+      const endpoint = type === "like" ? "/policyList/api/like/" : "/policyList/api/bookmark/";
 
       try {
         const response = await fetch(endpoint, {
@@ -178,7 +178,59 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});*/
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".icon_item").forEach((icon) => {
+    icon.addEventListener("click", async function (e) {
+      e.stopPropagation();
+
+      const img = this.querySelector("img");
+      const countSpan = this.querySelector(".count");
+      const type = this.dataset.type;
+      const postId = this.dataset.postId;
+
+      // 요청 보낼 URL
+      const endpoint = type === "like" ? "/policyList/api/like/" : "/policyList/api/bookmark/";
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ postId }),
+        });
+
+        if (!response.ok) throw new Error("요청 실패");
+
+        const result = await response.json();
+
+        this.classList.toggle("active");
+
+        // 서버 응답으로 정확한 count 반영
+        countSpan.textContent = result.like_count || result.scrap_count;
+
+        let newSrc = "";
+        if (type === "like") {
+          newSrc = result.like_status === "liked"
+            ? "/static/assets/img/full_heart_icon.png"
+            : "/static/assets/img/like_btn.png";
+        } else {
+          newSrc = result.bookmark_status === "bookmarked"
+            ? "/static/assets/img/full_bookmark_icon.png"
+            : "/static/assets/img/bookmark_icon.png";
+        }
+
+        img.src = newSrc + "?v=" + new Date().getTime();
+      } catch (err) {
+        alert("서버 오류가 발생했습니다.");
+        console.error(err);
+      }
+    });
+  });
 });
+
 //url 이동
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".board_item").forEach((item) => {
