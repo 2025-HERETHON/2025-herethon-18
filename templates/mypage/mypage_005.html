@@ -1,12 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/assets/css/style.css">
-    <link rel="stylesheet" href="/static/assets/css/reset.css">
-    <link rel="stylesheet" href="/static/assets/css/section/myp_005.css">
+    <link rel="stylesheet" href="{% static 'assets/css/mypage_005.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/reset.css' %}">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
@@ -80,7 +82,7 @@
     </footer>
     </div>
 </body>
-<script src="/static/js/myp_005.js"></script>
+    <script src="{% static 'assets/js/mypage_005.js' %}"></script>
 
 </html>
 

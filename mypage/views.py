@@ -30,4 +30,22 @@ def mypage_view(request):
     }
     return render(request, 'mypage/mypage.html', context)
 
+def mypage_likeList(request):
+    user = request.user  # 로그인된 사용자
+
+    context = {
+        'user': user,  # user 전체 객체 전달
+        'user_nickname': user.nickname,  # 따로 필요한 필드도 가능
+    }
+    return render(request, 'mypage/mypage_005.html', context)
+
+def mypage_scrapList(request):
+    user = request.user  # 로그인된 사용자
+
+    context = {
+        'user': user,  # user 전체 객체 전달
+        'user_nickname': user.nickname,  # 따로 필요한 필드도 가능
+    }
+    return render(request, 'mypage/mypage_007.html', context)
+
 
