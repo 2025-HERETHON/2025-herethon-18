@@ -1,53 +1,35 @@
-// 헤더 상단 제목 클릭 시, main_002 화면으로 이동
 document.addEventListener('DOMContentLoaded', () => {
   const loginButton = document.querySelector('.login_btn_submit');
 
-// 전체 동의
-document.getElementById('checkAll').addEventListener('change', function () {
-    const isChecked = this.checked;
-    document.querySelectorAll('.terms').forEach(cb => {
-        cb.checked = isChecked;
-    });
-});
+  loginButton.addEventListener('click', async () => {
+    const id = document.querySelector('.login_id').value;
+    const pw = document.querySelector('.login_password').value;
 
-// 개별 약관 체크 시 전체 동의 상태 동기화
-document.querySelectorAll('.terms').forEach(cb => {
-    cb.addEventListener('change', function () {
-        const all = document.querySelectorAll('.terms').length;
-        const checked = document.querySelectorAll('.terms:checked').length;
-        document.getElementById('checkAll').checked = (all === checked);
-    });
-});
-
-// 다음 단계 버튼 클릭 시 유효성 검사
-document.getElementById('signupBtn').addEventListener('click', function (e) {
-    const name = document.querySelector('input[type="text"]').value.trim();
-    const email = document.querySelector('input[type="email"]').value.trim();
-    const password = document.querySelectorAll('input[type="password"]')[0].value.trim();
-    const confirmPassword = document.querySelectorAll('input[type="password"]')[1].value.trim();
-
-    if (!name || !email || !password || !confirmPassword) {
-        alert('모든 입력 항목을 작성해주세요.');
-        e.preventDefault();
-        return;
+    if (!id || !pw) {
+      alert('아이디와 비밀번호를 입력해주세요.');
+      return;
     }
 
-    if (password.length < 8 || password.length > 20) {
-        alert('비밀번호는 8~20자여야 합니다.');
-        e.preventDefault();
-        return;
-    }
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id, pw })
+      });
 
-    if (password !== confirmPassword) {
-        alert('비밀번호가 일치하지 않습니다.');
-        e.preventDefault();
-        return;
-    }
+      const result = await response.json();
 
-    const terms = document.querySelectorAll('.terms');
-    if (!terms[0].checked || !terms[1].checked) {
-        alert('필수 약관에 모두 동의해주세요.');
-        e.preventDefault();
-        return;
+      if (result.success) {
+        // 로그인 성공 시 이동
+        window.location.href = '/static/html/main_002.html';
+      } else {
+        alert(result.message || '로그인에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('로그인 오류:', error);
+      alert('서버 오류가 발생했습니다.');
     }
+  });
 });
