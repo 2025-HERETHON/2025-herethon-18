@@ -2,8 +2,8 @@
 2025 여기톤 : HER+ETHON 18팀
 
 ## 서비스 소개
+<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/eaab2abb-da14-4aa1-adca-f462dcad2e88" />
 
-![1표지.png](attachment:d5e97529-e819-4dd0-88ed-16b6b9b524df:1표지.png)
 
 <서울 여성의 삶의 질을 **높이는** 참여형 복지 플랫폼, **Elevate**:Seoul>
 
