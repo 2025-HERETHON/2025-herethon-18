@@ -22,3 +22,9 @@ document.querySelector('.com-btn')?.addEventListener('click', function () {
 document.querySelector(".com_write-btn")?.addEventListener("click", () => {
     window.location.href = "/static/html/com_003.html"; // 글쓰기 페이지로 이동
 });
+
+// 페이지 이동
+document.querySelector(".tab-link_2")?.addEventListener("click", () => {
+    window.location.href = "/static/html/com_002.html"; // 내가쓴글페이지로 이동
+});
+

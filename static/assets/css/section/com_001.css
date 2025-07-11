@@ -90,14 +90,14 @@
 
 }
 
-.tab-link {
+.tab-link_1, .tab-link_2{
     font-weight: 600;
     font-size: 36px;
     color: #777;
     text-decoration: none;
 }
 
-.tab-link.active {
+.tab-link_1 {
     color: #4E508C;
 }
 

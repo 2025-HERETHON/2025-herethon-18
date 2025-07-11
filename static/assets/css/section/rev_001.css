@@ -5,7 +5,7 @@
     border-bottom: 1px solid #D8D8D8;
 }
 
-.header-inner{
+.header-inner {
     display: flex;
     flex-direction: row;
     width: 1920px;
@@ -15,7 +15,8 @@
     align-items: center;
 }
 
-.left-header{ /* 헤더 왼쪽 */
+.left-header {
+    /* 헤더 왼쪽 */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,27 +24,27 @@
     flex-shrink: 0;
 }
 
-.logo{
+.logo {
     color: #000;
     font-family: Pretendard;
     font-size: 36px;
     font-weight: 700;
 }
 
-.header-age-label{
+.header-age-label {
     color: #595959;
     font-family: Pretendard;
     font-size: 28px;
     font-weight: 600;
 }
 
-.btns{
+.btns {
     display: flex;
     flex-direction: row;
     gap: 65px;
 }
 
-.btns button{
+.btns button {
     color: #656565;
     font-family: Inter;
     font-size: 28px;
@@ -59,13 +60,13 @@
 }
 
 /* 메인 */
-.title-wrapper{
+.title-wrapper {
     display: flex;
     flex-direction: column;
     margin: 100px 690px 70px 300px;
 }
 
-.title{
+.title {
     color: #000;
     font-family: Pretendard;
     font-size: 48px;
@@ -73,7 +74,7 @@
     line-height: 76.8px;
 }
 
-.title-text{
+.title-text {
     color: #000;
     font-family: Pretendard;
     font-size: 32px;
@@ -82,7 +83,7 @@
 
 
 /* 후기들 */
-.review-list{
+.review-list {
     display: flex;
     flex-direction: column;
     margin-left: 300px;
@@ -91,11 +92,11 @@
     align-items: stretch;
 }
 
-.rev-card{
+.rev-card {
     margin-top: 20px;
 }
 
-.rev-header{
+.rev-header {
     width: 1320px;
     height: 91px;
     border-radius: 10px 10px 0px 0px;
@@ -105,7 +106,7 @@
     background: #F3F4F8;
 }
 
-.rev-title{
+.rev-title {
     color: #000;
     font-family: Pretendard;
     font-size: 32px;
@@ -114,7 +115,7 @@
     padding: 20px 40px;
 }
 
-.rev-body{
+.rev-body {
     display: flex;
     flex-direction: column;
     width: 1320px;
@@ -126,15 +127,15 @@
     gap: 20px;
 }
 
-.rev-subtitle{
+.rev-subtitle {
     color: #000;
     font-family: Pretendard;
     font-size: 28px;
     font-weight: 600;
-    line-height: 44.8px; 
+    line-height: 44.8px;
 }
 
-.rev-content{
+.rev-content {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -147,7 +148,7 @@
     font-weight: 400;
 }
 
-.rev-footer{
+.rev-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -157,7 +158,7 @@
     font-weight: 500;
 }
 
-.rev-write-btn{
+.rev-write-btn {
     width: 200px;
     height: 91px;
     border-radius: 50px;
@@ -166,29 +167,26 @@
     margin: 60px 860px 100px 860px;
 }
 
-.rev-write-btn > div {
-    display: flex;   
+.rev-write-btn>div {
+    display: flex;
     align-items: center;
     justify-self: center;
     padding: 30px;
     gap: 8px;
 }
 
-.rev-write-btn > div > span {
+.rev-write-btn>div>span {
     color: #000;
     font-family: Pretendard;
     font-size: 28px;
     font-weight: 600;
-    line-height: 30.8px; 
+    line-height: 30.8px;
 }
 
 /* 페이지네이션 버튼 */
-.rev-page{
+.rev-page {
     display: flex;
     flex-direction: row;
     gap: 25px;
     margin: 0px 795px 0px 795px;
 }
-
-
-

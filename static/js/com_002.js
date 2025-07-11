@@ -37,3 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// 페이지 이동
+document.querySelector(".tab-link_1")?.addEventListener("click", () => {
+    window.location.href = "/static/html/com_001.html"; // 커뮤니티로 이동
+});
+
