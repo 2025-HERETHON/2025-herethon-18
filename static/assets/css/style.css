@@ -8,15 +8,6 @@
   margin: 0 auto;
 }
 
-/* 로그아웃 시 main 화면 (그래프 부분) 전용 */
-.main1_layout-inner{
-  width: 1920px;
-  margin: 0 auto;
-  margin-top: 200px;
-}
-
-
-
 /* 공통 푸터 스타일 */
 
 .footer_layout-inner {
