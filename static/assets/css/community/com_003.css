@@ -1,0 +1,165 @@
+/* 로그인 후 헤더 */
+.header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+    height: 120px;
+    padding: 6px 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header {
+    /* 헤더 왼쪽 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+.logo {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.header-age-label {
+    color: #595959;
+    font-family: Pretendard;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 65px;
+}
+
+.btns button {
+    color: #656565;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.256px;
+}
+
+.mypage-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* 메인 */
+.write-title {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 100px 300px 50px 300px;
+}
+
+.write-title>h3 {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#write-input {
+    color: black;
+    font-family: Pretendard;
+    font-size: 28px;
+    font-weight: 500;
+    width: 1032px;
+    border: none;
+    outline: none;
+}
+
+#write-input::placeholder {
+    color: #999;
+}
+
+.write-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: left;
+    margin: 100px 300px 50px 300px;
+
+}
+
+.write-content>h3 {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#write-content {
+    display: flex;
+    width: 1320px;
+    height: 440px;
+    padding: 30px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #D8D8D8;
+    color: black;
+    /* 사용자 텍스트 입력 시 글자색 검정색으로 변경 */
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 30px 40px;
+    outline: none;
+}
+
+.upload-yn {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin: 0px 300px 0px 1195px;
+}
+
+#write-cancel-btn {
+    color: #01A0FF;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35.2px;
+    display: flex;
+    width: 160px;
+    padding: 25px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    border: 3px solid #01A0FF;
+}
+
+#write-upload-btn {
+    display: flex;
+    width: 240px;
+    padding: 25px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: #01A0FF;
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 110%;
+}

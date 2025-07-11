@@ -1,0 +1,210 @@
+/* 로그인 후 헤더 */
+.header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+    height: 120px;
+    padding: 6px 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header {
+    /* 헤더 왼쪽 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+.logo {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.header-age-label {
+    color: #595959;
+    font-family: Pretendard;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 65px;
+}
+
+.btns button {
+    color: #656565;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.256px;
+}
+
+.mypage-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 메인 */
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 690px 70px 300px;
+}
+
+.title {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 76.8px;
+}
+
+.title-text {
+    width: 1320px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.tab {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+    margin-left: 300px;
+
+}
+
+.tab-link_2, .tab-link_1 {
+    font-weight: 600;
+    font-size: 36px;
+    color: #777;
+    text-decoration: none;
+}
+
+.tab-link_1 {
+    color: #4E508C;
+}
+
+.rev-card {
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 30px;
+    margin-left: 300px;
+    width: 1320px;
+    height: 349px;
+}
+
+.badge {
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: #4E508C;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 10px;
+    width: 129px;
+    height: 49px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.review-title {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.review-title img {
+    width: 38px;
+    height: 38px;
+    margin-bottom: -8px;
+}
+
+.review-title span {
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.review-content {
+    margin-left: 30px;
+    font-size: 24px;
+    color: #000;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.review-footer {
+    margin-top: 45px;
+    margin-left: 30px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #6D6C6C;
+    display: flex;
+    justify-content: space-between;
+}
+
+.com_write-btn {
+    width: 200px;
+    height: 91px;
+    border-radius: 50px;
+    border: 1px solid #D8D8D8;
+    background: #ECECEC;
+    margin: 60px 860px 100px 860px;
+}
+
+.com_write-btn>div {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 30px;
+    gap: 8px;
+}
+
+.com_write-btn>div>span {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30.8px;
+}
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 25px;
+}
+
+.pagination button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #999999;
+}
+
+.pagination button.active {
+    color: #000;
+}

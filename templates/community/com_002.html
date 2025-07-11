@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/reset.css">
+    <link rel="stylesheet" href="/static/assets/css/community/com_002.css">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>마이페이지</title>
+</head>
+
+<body>
+    <div class="layout-outer">
+        <!-- 헤더 -->
+        <header class="header layout-inner">
+            <div class="header-inner">
+                <!-- 왼쪽 로고 + 연령 -->
+                <div class="left-header">
+                    <img class="logo" src="/static/assets/img/logo_header_real.png" alt="logo" />
+                    <span class="header-age-label">전연령</span>
+                </div>
+
+                <!-- 오른쪽 후기,멘토질문방,커뮤니티 버튼 -->
+                <div class="right-header">
+                    <div class="btns">
+                        <button class="review-btn">후기</button>
+                        <button class="qna-btn">멘토 질문방</button>
+                        <button class="com-btn">커뮤니티</button>
+                        <button class="mypage-btn">
+                            <img src="/static/assets/img/dag.png">
+                            <span id="user-nickname">{{ user_nickname }}</span>
+                        </button>
+                    </div>
+                </div>
+        </header>
+
+        <!-- 메인 -->
+        <main>
+            <div class="title-wrapper">
+                        <div class="title">커뮤니티</div>
+                        <div class="title-text">여성의 시선에서 필요한 정책을 자유롭게 제안하고, 함께 토론하며 더 나은 변화를 만들어가는 커뮤니티입니다.</div>
+                    </div>
+
+                    <div class="tab">
+                        <div class="tab-link_1">정책 제안</div>
+                        <div class="tab-link_2">내가 쓴 글</div>
+                    </div>
+
+                    <!-- 동적으로 들어갈 카드 1개 예시 -->
+                    <div class="rev-card">
+                        <div class="badge-row">
+                            <div class="badge">정책 제안</div>
+                            <button class="del_com">
+                                <img src="/static/assets/img/del.png" alt="커뮤니티 삭제">
+                                <span>삭제</span>
+                            </button>
+                        </div>
+
+                        <div class="review-title">
+                            <img src="/static/assets/img/vote.png" alt="투표 버튼">
+                            <span>청소년 대상 성교육 강화 필요해요</span>
+                        </div>
+                        <div class="review-content">
+                            최근 아동학대와 가정 폭력 사망사건이 보도되며 아이의 인권과 성교육의 중요성이 대두되고 있습니다. <br>
+                            저는 청소년 대상 성교육 강화를 통해 조기 예방과 인권 감수성 교육이 확대되길 바랍니다.
+                        </div>
+                        <div class="review-footer">
+                            <span>익명</span>
+                            <span>2025.07.01</span>
+                        </div>
+
+                    </div>
+
+                    <div class="rev-card">
+                        <div class="badge-row">
+                            <div class="badge">정책 제안</div>
+                            <button class="del_com">
+                                <img src="/static/assets/img/del.png" alt="커뮤니티 삭제">
+                                <span>삭제</span>
+                            </button>
+                        </div>
+
+                        <div class="review-title">
+                            <img src="/static/assets/img/vote.png" alt="투표 버튼">
+                            <span>생리대 무상 지급을 확대합시다!</span>
+                        </div>
+                        <div class="review-content">
+                            저는 00고등학교를 다니는 고등학생입니다. 저는 생리대 무상 지급 덕분에 생리대 구매에 어려움을 겪지 않을 수 있게 됐습니다.<br> 다만, 친구들에게 물어보니 이
+                            혜택을
+                            못 받는 친구들도 많더라고요.
+                        </div>
+                        <div class="review-footer">
+                            <span>익명</span>
+                            <span>2025.06.03</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="rev-card">
+                        <div class="badge-row">
+                            <div class="badge">정책 제안</div>
+                            <button class="del_com">
+                                <img src="/static/assets/img/del.png" alt="커뮤니티 삭제">
+                                <span>삭제</span>
+                            </button>
+                        </div>
+
+                        <div class="review-title">
+                            <img src="/static/assets/img/vote.png" alt="투표 버튼">
+                            <span>여성 경력단절 문제를 해결하기 위한 방안</span>
+                        </div>
+                        <div class="review-content">
+                            저는 육아휴직으로 인한 경력단절 여성입니다. 연속으로 육아휴직을 하게 되어서 재취업도 어렵고 양육에 들어가는 비용이 <br>만만치 않더라고요. 자격증이나 이력서 작성 등
+                            재취업 준비를 하는 중인데 나이와 경력단절 기간이 마음에 걸리더라고요.
+                        </div>
+                        <div class="review-footer">
+                            <span>익명</span>
+                            <span>2025.05.01</span>
+                        </div>
+
+                    </div>
+
+
+
+        </main>
+
+
+    <footer class="footer_layout-inner">
+        <div class="footer_top">
+            <div class="footer_logo">
+                <img src="/static/assets/img/logo_footer_real.png" alt="footer로고">
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <p>개인정보처리방침</p>
+            <small>ⓒ 2025 AAA. All rights reserved.</small>
+        </div>
+    </footer>
+    </div>
+</body>
+<script src="{% static 'assets/js/community/com_002.js' %}"></script>
+
+</html>

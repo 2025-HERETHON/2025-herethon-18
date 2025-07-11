@@ -28,6 +28,7 @@ urlpatterns = [
     path('policyList/', include('policyList.urls')),
     path('review/', include('review.urls')),
     path('mypage/', include('mypage.urls')),
+    path('community/', include('community.urls')),
 
 ]
 
