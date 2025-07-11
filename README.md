@@ -24,20 +24,24 @@ Elevate:Seoul은 여성의 생애주기별 맞춤 복지 정보를 쉽고 빠르
 - 프론트엔드
     - 정지은: 로그인 페이지, 리스트 페이지, 커뮤니티 페이지, 메인 마이페이지
     
-    ![미피.jpeg](attachment:31a2fd85-297f-40c6-b23c-5610672d4208:미피.jpeg)
+    <img width="736" height="736" alt="image" src="https://github.com/user-attachments/assets/83000980-a5b3-4ceb-9814-880b01b9aad6" />
+
     
     - 최연서: 연령별 메인 페이지, 후기 페이지,  마이페이지 내부 활동 페이지
     
-    ![기름이.jpeg](attachment:7f49dda2-7f75-4750-8992-e0cd71bcf2f6:기름이.jpeg)
+    <img width="1024" height="862" alt="image" src="https://github.com/user-attachments/assets/27f7cc84-1e2c-4b42-b614-bb980eaff18d" />
+
     
 - 백엔드
     - 김연우: 전체 모델 구성**,** 후기 페이지, 리스트 페이지, 메인 페이지의 후속 페이지, 마이 페이지의 유저별 정보/좋아요/스크랩 구현 및 db 연결
     
-    ![image.png](attachment:0da30ad6-6b39-414a-9068-18e8c5ede0ff:image.png)
+    <img width="420" height="420" alt="image" src="https://github.com/user-attachments/assets/79370a46-2afc-4999-b578-576eb568ba14" />
+
     
     - 정유진: 커뮤니티 페이지, 로그인, 회원가입 페이지, 메인 페이지, 마이 페이지의 유저별 정보/좋아요/스크랩 구현 및 db 연결
     
-    ![image.png](attachment:94f6eb13-676a-4367-b087-d88d12ecf27e:image.png)
+    <img width="460" height="460" alt="image" src="https://github.com/user-attachments/assets/16e6b3f0-e40e-4094-95d1-9beb21729bac" />
+
     
 
 ## 폴더 구조
