@@ -15,6 +15,11 @@ document.querySelector(".mypage-btn")?.addEventListener("click", function () {
   window.location.href = "/mypage/";
 });
 
+// 상단 헤더 커뮤니티 버튼 클릭 시, com_001로 이동
+document.querySelector(".com-btn")?.addEventListener("click", function () {
+  window.location.href = "/community/";
+});
+
 // 헤더 유저 닉네임으로 바뀌기 (더미데이터 사용)
 /*const dummyLoginResponse = {
   accessToken: "eyJhbGciOiJIUzI1NiIs...",

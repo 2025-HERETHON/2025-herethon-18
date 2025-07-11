@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "/mypage/";
   });
 
+  // 상단 헤더 커뮤니티 버튼 클릭 시, com_001로 이동
+document.querySelector(".com-btn")?.addEventListener("click", function () {
+  window.location.href = "/community/";
+});
+
   const currentPage = window.location.pathname.split("/").pop();
 
   document.querySelectorAll(".category_btn").forEach((link) => {

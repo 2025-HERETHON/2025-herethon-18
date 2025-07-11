@@ -8,6 +8,12 @@ document.querySelector(".review-btn")?.addEventListener("click", function () {
   window.location.href = "/review/list/";
 });
 
+
+// 상단 헤더 커뮤니티 버튼 클릭 시, com_001로 이동
+document.querySelector(".com-btn")?.addEventListener("click", function () {
+  window.location.href = "/community/";
+});
+
 // 파란 박스 클릭 시, list_001 화면으로 이동
 document
   .querySelector(".popular-box-wrapper")
@@ -69,7 +75,7 @@ document.querySelectorAll(".graph-item").forEach((item) => {
 };*/
 
 // localStorage에 저장 (세션 유지용)
-localStorage.setItem("user", JSON.stringify(dummyLoginResponse.user));
+//localStorage.setItem("user", JSON.stringify(dummyLoginResponse.user));
 
 document.addEventListener("DOMContentLoaded", () => {
   const userData = JSON.parse(localStorage.getItem("user")); // 저장된 사용자 정보 불러오기
