@@ -5,11 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{% static 'assets/css/section/list_001.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}">
-
+    <link rel="stylesheet" href="/static/assets/css/section/list_001.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/reset.css">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
@@ -63,14 +61,14 @@
             <!--게시글 목록-->
             <ul class="board_list">
                 {% for policy in policies %}
-                <li class="board_item" data-url="#">
+                <li class="board_item">
                     <span class="board_num">{{ forloop.counter0|add:page_obj.start_index }}</span>
                     <div class="board-content">
                         <p class="board-title">{{ policy.policy_name }}</p>
                         <p class="board-category">{{ policy.department }}</p>
                     </div>
                     <div class="board_icons">
-                        <div class="icon_item like" data-type="like">
+                        <div class="icon_item like"  data-type="like">
                             <img src="/static/assets/img/like_btn.png" alt="좋아요">
                             <span class="count">{{ policy.like_count }}</span>
                         </div>
@@ -81,16 +79,15 @@
                     </div>
                 </li>
                 {% empty %}
-                <li class="board_item">
-                    <p>표시할 정책이 없습니다.</p>
-                </li>
+                <li><p>정책이 없습니다.</p></li>
                 {% endfor %}
             </ul>
+            
 
             <!--페이지네이션-->
             <div class="pagination">
                 {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}">
+                    <a href="?page={{ page_obj.previous_page_number }}">
                         <button class="prev_btn">
                             <img src="/static/assets/img/prev_btn.png" alt="이전">
                         </button>
@@ -106,13 +103,14 @@
                 {% endfor %}
             
                 {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}&sort={{ sort }}"></a>
-                        <button class="next_btn">
+                    <a href="?page={{ page_obj.next_page_number }}">
+                        <button class="prev_btn">
                             <img src="/static/assets/img/next_btn.png" alt="다음">
                         </button>
                     </a>
                 {% endif %}
             </div>
+            
 
     <footer class="footer_layout-inner">
         <div class="footer_top">
@@ -126,8 +124,7 @@
         </div>
     </footer>
     </div>
-
 </body>
-    <script src="{% static 'assets/js/list.js' %}"></script>
+<script src="{% static 'assets/js/list.js' %}"></script>
 
 </html>

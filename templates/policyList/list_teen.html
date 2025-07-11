@@ -5,11 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{% static 'assets/css/section/list_001.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}">
-
+    <link rel="stylesheet" href="/static/assets/css/section/list_001.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/reset.css">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
@@ -70,7 +68,7 @@
                         <p class="board-category">{{ policy.department }}</p>
                     </div>
                     <div class="board_icons">
-                        <div class="icon_item like" data-type="like">
+                        <div class="icon_item like"  data-type="like">
                             <img src="/static/assets/img/like_btn.png" alt="좋아요">
                             <span class="count">{{ policy.like_count }}</span>
                         </div>
@@ -126,8 +124,7 @@
         </div>
     </footer>
     </div>
-
 </body>
-    <script src="{% static 'assets/js/list.js' %}"></script>
+<script src="{% static 'assets/js/list.js' %}"></script>
 
 </html>
