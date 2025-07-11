@@ -15,7 +15,13 @@ Elevate:Seoul은 여성의 생애주기별 맞춤 복지 정보를 쉽고 빠르
 
 ## 기술 스택
 
-복붙 
+기술 스택
+
+프론트엔드:   Html, Css, Javascript
+
+백엔드:  Python, Django
+
+기획·디자인: Figma
 
 ## 팀원 소개, 역할 분담
 
