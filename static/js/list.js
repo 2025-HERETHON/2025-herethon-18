@@ -111,7 +111,63 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+// 좋아요 / 북마크 클릭 시 POST + 상태 반영
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".icon_item").forEach(icon => {
+        icon.addEventListener("click", async function (e) {
+            e.stopPropagation();
 
+            const img = this.querySelector("img");
+            const countSpan = this.querySelector(".count");
+            const type = this.dataset.type;
+            const postId = this.dataset.postId;
+            const isActive = this.classList.contains("active");
+
+            let count = parseInt(countSpan.textContent, 10);
+
+            // 요청 보낼 URL
+            const endpoint = type === "like"
+                ? "/api/like/"
+                : "/api/bookmark/";
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        postId: postId,
+                        action: isActive ? "unlike" : "like"
+                    })
+                });
+
+                if (!response.ok) throw new Error("요청 실패");
+
+                // 서버 응답 성공 시 처리
+                this.classList.toggle("active");
+                countSpan.textContent = isActive ? count - 1 : count + 1;
+
+                let newSrc = "";
+                if (type === "like") {
+                    newSrc = isActive
+                        ? "/static/assets/img/like_btn.png"
+                        : "/static/assets/img/full_heart_icon.png";
+                } else {
+                    newSrc = isActive
+                        ? "/static/assets/img/bookmark_icon.png"
+                        : "/static/assets/img/full_bookmark_icon.png";
+                }
+
+                img.src = newSrc + "?v=" + new Date().getTime(); // 캐시 우회
+
+            } catch (err) {
+                alert("서버 오류가 발생했습니다.");
+                console.error(err);
+            }
+        });
+    });
+});
 //url 이동
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.board_item').forEach(item => {
