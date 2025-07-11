@@ -156,20 +156,20 @@ git clone https://github.com/2025-HERETHON/2025-herethon-18.git
 cd 2025-herethon-18
 ```
 
-1. **가상환경 생성 및 활성화**
+2. **가상환경 생성 및 활성화**
 
 ```bash
 python3 -m venv venv       # (Windows: python -m venv venv)
 source venv/bin/activate   # (Windows: venv\Scripts\activate)
 ```
 
-1. **필수 패키지 설치**
+3. **필수 패키지 설치**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-1. **`settings.py`에서 데이터베이스 설정 변경**
+4. **`settings.py`에서 데이터베이스 설정 변경**
     
     (기존 MySQL → SQLite로 교체)
     
