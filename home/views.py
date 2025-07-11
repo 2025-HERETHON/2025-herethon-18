@@ -6,7 +6,7 @@ from login.models import User  # 홈 헤더에 연령대 표시
 def home(request):
     # 좋아요 많은 순으로 정책 5개 가져오기
     popular_policies = Policy.objects.order_by('-like_count')[:5]
-    review_cards = Review.objects.order_by("-created_at")[:3]
+    review_cards = Review.objects.order_by("-created_at")[:2]
 
     user_nickname = ''
     if request.user.is_authenticated:
@@ -26,7 +26,7 @@ def home(request):
 
 def home_infant(request):
     popular_policies = Policy.objects.filter(age_group='영유아').order_by('-like_count')[:5]
-    review_cards = Review.objects.order_by("-created_at")[:3]
+    review_cards = Review.objects.order_by("-created_at")[:2]
 
     user_nickname = ''
     if request.user.is_authenticated:
