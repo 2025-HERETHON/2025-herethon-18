@@ -1,0 +1,155 @@
+/* 로그인 후 헤더 */
+.header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+    height: 120px;
+    padding: 6px 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header {
+    /* 헤더 왼쪽 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+.logo {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.header-age-label {
+    color: #595959;
+    font-family: Pretendard;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 65px;
+}
+
+.btns button {
+    color: #656565;
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.256px;
+}
+
+.mypage-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* main 부분 */
+/* 제목: 좋아요 목록 */
+.like_page_title {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 140%;
+    margin: 100px 868px 60px 869px;
+}
+
+/* 하단 */
+.body_list {
+    display: flex;
+    width: 1320px;
+    padding: 30px 20px 20px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px 300px 0px 300px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.list_title {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 160%;
+}
+
+.list_subtitle {
+    color: #595959;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 160%;
+}
+
+.list_icons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-left: 1070px;
+    align-items: center;
+}
+
+.list_icons div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.like_num {
+    color: #595959;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 160%;
+    /* 38.4px */
+}
+
+.scrap_num {
+    color: #595959;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 160%;
+    /* 38.4px */
+}
+
+
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 25px;
+}
+
+.pagination button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #999999;
+}
+
+.pagination button.active {
+    color: #000;
+}
