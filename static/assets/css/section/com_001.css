@@ -186,10 +186,25 @@
     line-height: 30.8px;
 }
 
-/* 페이지네이션 버튼 */
-.rev-page {
+/* 페이지네이션 */
+.pagination {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
     gap: 25px;
-    margin: 0px 795px 0px 795px;
+}
+
+.pagination button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #999999;
+}
+
+.pagination button.active {
+    color: #000;
 }
