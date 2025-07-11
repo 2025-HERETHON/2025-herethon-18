@@ -9,6 +9,11 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from policyList.models import Policy  # 북마크 대상
 
+def annotate_user_interaction(policies, user):
+    for policy in policies:
+        policy.user_has_liked = Like.objects.filter(user=user, policy=policy).exists()
+        policy.user_has_bookmarked = Scrap.objects.filter(user=user, policy=policy).exists()
+    return policies
 
 # Create your views here.
 def policy_list(request):
@@ -30,7 +35,10 @@ def policy_list_middle(request):
 
     user_nickname = ''
     if request.user.is_authenticated:
+        annotate_user_interaction(page_obj.object_list, request.user)
         user_nickname = getattr(request.user, 'nickname', 'Unknown')
+    else:
+        user_nickname = ''
 
     context = {
         'page_obj': page_obj,
@@ -46,9 +54,13 @@ def policy_list_infant(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+
     user_nickname = ''
     if request.user.is_authenticated:
+        annotate_user_interaction(page_obj.object_list, request.user)
         user_nickname = getattr(request.user, 'nickname', 'Unknown')
+    else:
+        user_nickname = ''
 
     context = {
         'page_obj': page_obj,
@@ -66,7 +78,10 @@ def policy_list_teen(request):
 
     user_nickname = ''
     if request.user.is_authenticated:
+        annotate_user_interaction(page_obj.object_list, request.user)
         user_nickname = getattr(request.user, 'nickname', 'Unknown')
+    else:
+        user_nickname = ''
 
     context = {
         'page_obj': page_obj,
@@ -82,9 +97,13 @@ def policy_list_youth(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+
     user_nickname = ''
     if request.user.is_authenticated:
+        annotate_user_interaction(page_obj.object_list, request.user)
         user_nickname = getattr(request.user, 'nickname', 'Unknown')
+    else:
+        user_nickname = ''
 
     context = {
         'page_obj': page_obj,
@@ -100,9 +119,13 @@ def policy_list_elder(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+
     user_nickname = ''
     if request.user.is_authenticated:
+        annotate_user_interaction(page_obj.object_list, request.user)
         user_nickname = getattr(request.user, 'nickname', 'Unknown')
+    else:
+        user_nickname = ''
 
     context = {
         'page_obj': page_obj,
@@ -119,7 +142,11 @@ def policy_list_all(request):
 
     user_nickname = ''
     if request.user.is_authenticated:
+        annotate_user_interaction(page_obj.object_list, request.user)
         user_nickname = getattr(request.user, 'nickname', 'Unknown')
+    else:
+        user_nickname = ''
+
 
     context = {
         'page_obj': page_obj,
