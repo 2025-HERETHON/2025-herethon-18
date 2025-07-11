@@ -40,7 +40,14 @@ Elevate:Seoul은 여성의 생애주기별 맞춤 복지 정보를 쉽고 빠르
     
     - 정유진: 커뮤니티 페이지, 로그인, 회원가입 페이지, 메인 페이지, 마이 페이지의 유저별 정보/좋아요/스크랩 구현 및 db 연결
 
-    
+
+## 기능 구현 - 회원가입 및 로그인
+로그인 화면
+<img width="1716" height="1192" alt="image" src="https://github.com/user-attachments/assets/fc53c93e-ab47-429a-854e-cb18fc628c3c" />
+
+회원가입 화면
+
+<img width="1722" height="1305" alt="image" src="https://github.com/user-attachments/assets/403d3132-5561-4443-844c-b959e2c32a5e" />
 
 ## 폴더 구조
 
