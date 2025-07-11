@@ -35,5 +35,5 @@ class Like(models.Model):
 class Scrap(models.Model):
     scrap_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('login.User', on_delete=models.CASCADE)
-    policy = models.ForeignKey(Policy, on_delete=models.CASCADE)
+    policy = models.ForeignKey(Policy, on_delete=models.CASCADE, related_name="policylist_policy_scraps")
     created_at = models.DateTimeField(auto_now_add=True)

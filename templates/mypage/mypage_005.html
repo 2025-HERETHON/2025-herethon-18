@@ -45,8 +45,30 @@
                 <div class="like_page_title">좋아요 목록</div>
                 <!-- 좋아요 리스트 부분 -->
                 <div class="like_page_body">
-                    <!-- JS로 동적 추가 -->
+                    {% if liked_policies %}
+                        {% for policy in liked_policies %}
+                        <div class="body_list" data-policy-id="{{ policy.id }}">
+                            <div class="list_left">
+                                <div class="list_title">{{ policy.policy_name }}</div>
+                                <div class="list_subtitle">{{ policy.department }}</div>
+                            </div>
+                            <div class="list_icons">
+                                <div class="like-box">
+                                    <img src="{% static 'assets/img/Nlucide.svg' %}" class="like-icon" />
+                                    <span class="like_num">{{ policy.like_count }}</span>
+                                </div>
+                                <div class="scrap-box">
+                                    <img src="{% static 'assets/img/lucide.png' %}" />
+                                    <span class="scrap_num">{{ policy.scrap_count }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>좋아요 한 글이 없습니다.</p>
+                    {% endif %}
                 </div>
+                
 
 
                 <!--페이지네이션-->

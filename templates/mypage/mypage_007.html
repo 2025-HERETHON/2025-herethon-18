@@ -45,8 +45,30 @@
                 <div class="scrap_page_title">스크랩 목록</div>
                 <!-- 스크랩 리스트 부분 -->
                 <div class="scrap_page_body">
-                    <!-- JS로 동적 추가 -->
+                    {% if scrapped_policies %}
+                        {% for policy in scrapped_policies %}
+                        <div class="body_list" data-policy-id="{{ policy.id }}">
+                            <div class="list_left">
+                                <div class="list_title">{{ policy.policy_name }}</div>
+                                <div class="list_subtitle">{{ policy.department }}</div>
+                            </div>
+                            <div class="list_icons">
+                                <div class="like-box">
+                                    <img src="{% static 'assets/img/Nlucide_1.png' %}" class="like-icon" />
+                                    <span class="like_num">{{ policy.like_count }}</span>
+                                </div>
+                                <div class="scrap-box">
+                                    <img src="{% static 'assets/img/lucide.svg' %}" />
+                                    <span class="scrap_num">{{ policy.scrap_count }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>스크랩한 글이 없습니다.</p>
+                    {% endif %}
                 </div>
+                
 
 
                 <!--페이지네이션-->
