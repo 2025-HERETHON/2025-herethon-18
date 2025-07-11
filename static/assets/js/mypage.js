@@ -4,31 +4,14 @@ document.querySelector(".logo")?.addEventListener("click", function () {
 });
 
 // 상단 헤더 후기 버튼 클릭 시, rev_001로 이동
-document.querySelector('.review-btn')?.addEventListener('click', function () {
-    window.location.href='/review/list/'
+document.querySelector(".review-btn")?.addEventListener("click", function () {
+  window.location.href = "/review/list/";
 });
 
 // 수정하기 버튼 준비중
 document.querySelector(".edit_btn")?.addEventListener("click", function () {
   alert("수정 기능은 현재 준비 중입니다.");
 });
-
-// 로그인된 유저 정보
-const user = {
-  name: "홍길동",
-  email: "abc1234@naver.com",
-  birth: "2004.01.01",
-  phone: "010-5188-8331",
-  region: "충청권",
-};
-
-function renderUserInfo(user) {
-  document.getElementById("user_name").textContent = user.name;
-  document.getElementById("user_email").textContent = user.email;
-  document.getElementById("user_birth").textContent = user.birth;
-  document.getElementById("user_phone").textContent = user.phone;
-  document.getElementById("user_region").textContent = user.region;
-}
 
 const reviewsPerPage = 3;
 let currentPage = 1;
@@ -195,6 +178,5 @@ function attachReviewEvent() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderUserInfo(user);
   renderReviews(currentPage);
 });

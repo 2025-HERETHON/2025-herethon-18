@@ -46,7 +46,7 @@
                 <h2>마이페이지</h2>
                 <div class="info_card">
                     <div class="info_section01">
-                        <p><span id="user_name">홍길동</span><span class="user_name_fix">님</span></p>
+                        <p><span id="user_name">{{ user.name }}</span><span class="user_name_fix">님</span></p>
                         <button class="edit_btn">
                             <img src="/static/assets/img/pencil.png" alt="수정아이콘">
                             수정하기
@@ -55,19 +55,19 @@
                     <div class="info_section02">
                         <div class="info_row">
                             <span class="label">이메일</span>
-                            <span class="value" id="user_email">이메일정보</span>
+                            <span class="value" id="user_email">{{ user.email }}</span>
                         </div>
                         <div class="info_row">
                             <span class="label">생년월일</span>
-                            <span class="value" id="user_birth">생년월일정보</span>
+                            <span class="value" id="user_birth">{{ user.birth_date}}</span>
                         </div>
                         <div class="info_row">
                             <span class="label">휴대폰</span>
-                            <span class="value" id="user_phone">휴대폰정보</span>
+                            <span class="value" id="user_phone">{{ user.phone_number }}</span>
                         </div>
                         <div class="info_row">
                             <span class="label">나이설정</span>
-                            <span class="value" id="user_region">나이설정정보</span>
+                            <span class="value" id="user_region">{{ user.age_group }}</span>
                         </div>
                     </div>
                 </div>

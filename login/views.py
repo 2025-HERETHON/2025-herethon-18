@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .models import User
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password, check_password
+from datetime import datetime
 
 
 # 로그인 페이지 : log_001
@@ -64,10 +65,15 @@ def setting_2(request):
             messages.error(request, "잘못된 접근입니다. 처음부터 다시 시도해주세요.")
             return redirect('setting_1')
 
-        nickname = request.POST.get('nickname')
-        birth_date = request.POST.get('birthdate')
-        phone_number = request.POST.get('phone')
+        nickname = request.POST.get('nick_name')
+        phone_number = request.POST.get('phone_number')
         age_group = request.POST.get('age_group')
+        birth_date_raw = request.POST.get('birth_date')
+        try:
+            birth_date = datetime.strptime(birth_date_raw, "%Y%m%d").date()
+        except ValueError:
+            messages.error(request, "생년월일 형식이 잘못되었습니다.")
+            return render(request, 'login/log_003.html')
 
         if User.objects.filter(nickname=nickname).exists():
             messages.error(request, "이미 사용 중인 닉네임입니다.")
