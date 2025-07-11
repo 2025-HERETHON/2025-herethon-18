@@ -1,11 +1,11 @@
 // 헤더 상단 제목 클릭 시, main_002 화면으로 이동
 document.querySelector('.logo')?.addEventListener('click', function () {
-    window.location.href = 'main_002.html'
+    window.location.href = '/home/'
 });
 
 // 상단 헤더 후기 버튼 클릭 시, rev_001로 이동
 document.querySelector('.review-btn')?.addEventListener('click', function () {
-    window.location.href = 'rev_001.html'
+    window.location.href = '/review/list/'
 });
 
 // 상단 헤더 커뮤니티 버튼 클릭 시, com_001로 이동
@@ -15,7 +15,7 @@ document.querySelector('.com-btn')?.addEventListener('click', function () {
 
 // 헤더 상단 닉네임 클릭 시, mypage(myp_001)로 이동
 document.querySelector('.mypage-btn')?.addEventListener('click', function () {
-    window.location.href = 'myp_001.html'
+    window.location.href = '/mypage/'
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="list_icons">
             <div class="like-box">
-            <img src="../assets/img/Nlucide.svg" class="like-icon" />
+            <img src="/static/assets/img/Nlucide.svg" class="like-icon" />
             <span class="like_num">${policy.like_count}</span>
             </div>
             <div class="scrap-box">
-            <img src="../assets/img/lucide.png" />
+            <img src="/static/assets/img/lucide.png" />
             <span class="scrap_num">${policy.scrap_count}</span>
             </div>
         </div>
