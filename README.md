@@ -29,24 +29,16 @@ Elevate:Seoul은 여성의 생애주기별 맞춤 복지 정보를 쉽고 빠르
       
 - 프론트엔드
     - 정지은: 로그인 페이지, 리스트 페이지, 커뮤니티 페이지, 메인 마이페이지
-    
-    <img width="150" height="736" alt="image" src="https://github.com/user-attachments/assets/83000980-a5b3-4ceb-9814-880b01b9aad6" />
 
     
     - 최연서: 연령별 메인 페이지, 후기 페이지,  마이페이지 내부 활동 페이지
-    
-    <img width="150" height="862" alt="image" src="https://github.com/user-attachments/assets/27f7cc84-1e2c-4b42-b614-bb980eaff18d" />
 
     
 - 백엔드
     - 김연우: 전체 모델 구성**,** 후기 페이지, 리스트 페이지, 메인 페이지의 후속 페이지, 마이 페이지의 유저별 정보/좋아요/스크랩 구현 및 db 연결
-    
-    <img width="150" height="420" alt="image" src="https://github.com/user-attachments/assets/79370a46-2afc-4999-b578-576eb568ba14" />
 
     
     - 정유진: 커뮤니티 페이지, 로그인, 회원가입 페이지, 메인 페이지, 마이 페이지의 유저별 정보/좋아요/스크랩 구현 및 db 연결
-    
-    <img width="150" height="460" alt="image" src="https://github.com/user-attachments/assets/16e6b3f0-e40e-4094-95d1-9beb21729bac" />
 
     
 
