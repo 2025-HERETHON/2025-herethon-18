@@ -3,11 +3,13 @@ from django.utils import timezone
 from policyList.models import *
 from django.core.paginator import Paginator
 from django.views.decorators.http import require_POST
-from django.http import JsonResponse
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from policyList.models import Policy  # 북마크 대상
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from policyList.models import Policy, Like, Scrap
 
 def annotate_user_interaction(policies, user):
     for policy in policies:
@@ -218,3 +220,5 @@ def toggle_bookmark(request):
             return JsonResponse({"status": "error", "message": "정책 없음"}, status=404)
 
     return JsonResponse({"status": "error", "message": "POST만 허용됨"}, status=405)
+
+

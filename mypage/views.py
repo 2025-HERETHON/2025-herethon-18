@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from login.models import User
+from policyList.models import Policy, Like, Scrap
 from django.http import JsonResponse
-from policyList.models import Like, Policy
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
 
 # Create your views here.
 # def mypage(request):
@@ -20,34 +22,45 @@ from django.contrib.auth.decorators import login_required
 #     return render(request, 'mypage/mypage.html', context)
 
 
-
+# 마이페이지 메인 화면
 @login_required
 def mypage_view(request):
     user = request.user  # 로그인된 사용자
 
     context = {
-        'user': user,  # user 전체 객체 전달
-        'user_nickname': user.nickname,  # 따로 필요한 필드도 가능
+        'user': user,
+        'user_nickname': user.nickname,
     }
     return render(request, 'mypage/mypage.html', context)
 
 
+@login_required
 def mypage_likeList(request):
-    user = request.user  # 로그인된 사용자
+    user = request.user
+
+    liked_policies = Policy.objects.filter(
+        policylist_policy_likes__user=user
+    ).distinct()
 
     context = {
-        'user': user,  # user 전체 객체 전달
-        'user_nickname': user.nickname,  # 따로 필요한 필드도 가능
+        'user': user,
+        'user_nickname': user.nickname,
+        'liked_policies': liked_policies,
     }
     return render(request, 'mypage/mypage_005.html', context)
 
+
+@login_required
 def mypage_scrapList(request):
-    user = request.user  # 로그인된 사용자
+    user = request.user
+
+    scrapped_policies = Policy.objects.filter(
+        policylist_policy_scraps__user=user
+    ).distinct()
 
     context = {
-        'user': user,  # user 전체 객체 전달
-        'user_nickname': user.nickname,  # 따로 필요한 필드도 가능
+        'user': user,
+        'user_nickname': user.nickname,
+        'scrapped_policies': scrapped_policies,
     }
     return render(request, 'mypage/mypage_007.html', context)
-
-
