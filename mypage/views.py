@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from login.models import User
+from django.http import JsonResponse
+from policyList.models import Like, Policy
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -29,6 +30,7 @@ def mypage_view(request):
         'user_nickname': user.nickname,  # 따로 필요한 필드도 가능
     }
     return render(request, 'mypage/mypage.html', context)
+
 
 def mypage_likeList(request):
     user = request.user  # 로그인된 사용자
